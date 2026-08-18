@@ -26,7 +26,7 @@ export default function HeroSection() {
       <div className="wrap relative z-10 pt-8 sm:pt-12 lg:pt-16">
         <div className="max-w-[540px] flex flex-col items-start gap-5 sm:gap-6">
           {/* Top Pill Badge */}
-          <div className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/70 backdrop-blur-sm px-4 py-1.5 text-[13px] font-medium text-black shadow-xs">
+          <div className="inline-flex items-center gap-2 rounded-[10px] border border-black/15 bg-white/70 backdrop-blur-sm px-4 py-1.5 text-[13px] font-medium text-black shadow-xs">
             <span>Welcome Onboard</span>
           </div>
 
@@ -48,7 +48,7 @@ export default function HeroSection() {
 
       {/* 3. Bottom Floating Action Bar */}
       <div className="wrap relative z-10 mt-14 sm:mt-20">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-5">
+        <div className=" flex flex-col md:flex-row items-center justify-between gap-5">
           {/* Left: Star Mark & Core Value Statement */}
           <div className="flex items-center gap-4 text-left w-full md:w-auto">
             <Logo className="text-[#713FFF] w-10 h-10 flex-none" />

@@ -39,7 +39,7 @@ export default function GapProblemSection() {
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-[760px] mx-auto mb-14 md:mb-18">
           {/* Eyebrow Tag */}
-          <div className="inline-flex items-center rounded-full border border-[#D9D9D9] px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4">
+          <div className="inline-flex items-center rounded-[10px] border border-[#D9D9D9] px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4">
             THE GAP PROBLEM
           </div>
 
@@ -60,7 +60,7 @@ export default function GapProblemSection() {
           {PROBLEMS_DATA.map((col) => (
             <div
               key={col.title}
-              className="bg-white rounded-3xl border border-[#E8E4F0] p-7 sm:p-8 shadow-xs hover:shadow-md transition-shadow flex flex-col items-start"
+              className="bg-white rounded-[10px] border border-[#E8E4F0] p-7 sm:p-8 shadow-xs hover:shadow-md transition-shadow flex flex-col items-start"
             >
               <h3 className="text-[24px] sm:text-[26px] font-bold text-black mb-6">
                 {col.title}
@@ -69,7 +69,7 @@ export default function GapProblemSection() {
                 {col.items.map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center gap-3 bg-[#FAF8FF] border border-[#F0ECFA] rounded-xl px-4 py-3 text-[15px] sm:text-[16px] font-normal text-[#292929] transition-colors hover:bg-[#F2EEFD]"
+                    className="flex items-center gap-3 bg-[#FAF8FF] border border-[#F0ECFA] rounded-[10px] px-4 py-3 text-[15px] sm:text-[16px] font-normal text-[#292929] transition-colors hover:bg-[#F2EEFD]"
                   >
                     <span className="text-red-500 font-bold text-sm flex-none">✕</span>
                     <span>{item}</span>

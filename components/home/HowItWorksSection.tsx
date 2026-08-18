@@ -26,7 +26,7 @@ export default function HowItWorksSection() {
       <div className="wrap">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-[760px] mx-auto mb-14 md:mb-18">
-          <div className="inline-flex items-center rounded-full border border-[#D9D9D9] bg-white px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4 shadow-2xs">
+          <div className="inline-flex items-center rounded-[10px] border border-[#D9D9D9] bg-white px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4 shadow-2xs">
             HOW SKILLREADY WORKS
           </div>
 
@@ -46,11 +46,11 @@ export default function HowItWorksSection() {
           {STEPS_DATA.map((row) => (
             <div
               key={row.role}
-              className="bg-white rounded-2xl border border-[#E8E4F0] p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 shadow-xs hover:border-[#713FFF]/40 transition-all duration-200"
+              className="bg-white rounded-[10px] border border-[#E8E4F0] p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-10 shadow-xs hover:border-[#713FFF]/40 transition-all duration-200"
             >
               {/* Role Pill */}
               <div className="flex-none">
-                <span className="inline-block rounded-md bg-[#F4F4F7] px-3 py-1.5 text-[12px] font-bold tracking-wider text-[#4C4C58] uppercase">
+                <span className="inline-block rounded-[10px] bg-[#F4F4F7] px-3 py-1.5 text-[12px] font-bold tracking-wider text-[#4C4C58] uppercase">
                   {row.role}
                 </span>
               </div>

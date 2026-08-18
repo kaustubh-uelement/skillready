@@ -40,7 +40,7 @@ export default function AudienceSolutionsSection() {
       <div className="wrap">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-[760px] mx-auto mb-14 md:mb-18">
-          <div className="inline-flex items-center rounded-full border border-[#D9D9D9] px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] mb-4">
+          <div className="inline-flex items-center rounded-[10px] border border-[#D9D9D9] px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] mb-4">
             Everything you need
           </div>
 
@@ -61,11 +61,11 @@ export default function AudienceSolutionsSection() {
           {CARDS_DATA.map((card) => (
             <div
               key={card.tag}
-              className={`group relative overflow-hidden rounded-[10px]  bg-gradient-to-b ${card.bgGradient} p-6 sm:p-7 flex flex-col justify-between min-h-[460px] shadow-lg transition-transform duration-200 hover:-translate-y-1`}
+              className={`group relative overflow-hidden rounded-[10px] bg-gradient-to-b ${card.bgGradient} p-6 sm:p-7 flex flex-col justify-between min-h-[460px] shadow-lg transition-transform duration-200 hover:-translate-y-1`}
             >
               {/* Top Tag Pill */}
               <div className="relative z-10">
-                <span className="inline-block rounded-full bg-white/20 backdrop-blur-md px-3.5 py-1 text-[11px] font-bold tracking-wider text-white uppercase border border-white/25">
+                <span className="inline-block rounded-[10px] bg-white/20 backdrop-blur-md px-3.5 py-1 text-[11px] font-bold tracking-wider text-white uppercase border border-white/25">
                   {card.tag}
                 </span>
               </div>

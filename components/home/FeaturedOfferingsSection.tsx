@@ -69,7 +69,7 @@ export default function FeaturedOfferingsSection() {
       <div className="wrap">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-[760px] mx-auto mb-14 md:mb-18">
-          <div className="inline-flex items-center rounded-full border border-[#D9D9D9] px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4">
+          <div className="inline-flex items-center rounded-[10px] border border-[#D9D9D9] px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4">
             FEATURED OFFERINGS
           </div>
 
@@ -84,10 +84,10 @@ export default function FeaturedOfferingsSection() {
           {OFFERINGS.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl border border-[#E8E4F0] p-7 sm:p-8 flex flex-col items-start gap-4 transition-all duration-200 hover:shadow-md hover:border-[#DCD2F5]"
+              className="bg-white rounded-[10px] border border-[#E8E4F0] p-7 sm:p-8 flex flex-col items-start gap-4 transition-all duration-200 hover:shadow-md hover:border-[#DCD2F5]"
             >
               {/* Icon Badge */}
-              <div className="w-10 h-10 rounded-full bg-[#713FFF] flex items-center justify-center shadow-xs flex-none">
+              <div className="w-10 h-10 rounded-[10px] bg-[#713FFF] flex items-center justify-center shadow-xs flex-none">
                 {item.icon}
               </div>
 

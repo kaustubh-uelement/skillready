@@ -56,7 +56,7 @@ export default function StudentReviewsSection() {
       <div className="wrap">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-[760px] mx-auto mb-14 md:mb-18">
-          <div className="inline-flex items-center rounded-full border border-[#D9D9D9] bg-white px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4 shadow-2xs">
+          <div className="inline-flex items-center rounded-[10px] border border-[#D9D9D9] bg-white px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4 shadow-2xs">
             STUDENT REVIEWS
           </div>
 
@@ -96,7 +96,7 @@ export default function StudentReviewsSection() {
 
 function TestimonialCard({ review }: { review: { quote: string; author: string } }) {
   return (
-    <div className="bg-white rounded-2xl border border-[#E8E4F0] p-6 sm:p-7 shadow-xs hover:shadow-md transition-all flex flex-col gap-4">
+    <div className="bg-white rounded-[10px] border border-[#E8E4F0] p-6 sm:p-7 shadow-xs hover:shadow-md transition-all flex flex-col gap-4">
       {/* Top: Avatar & 5 Stars */}
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-[#E5E7EB] flex items-center justify-center text-gray-500 font-bold text-sm flex-none">

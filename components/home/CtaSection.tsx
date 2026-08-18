@@ -35,21 +35,21 @@ export default function CtaSection() {
           <div className="flex items-center gap-3 flex-wrap pt-2">
             <Link
               href="/students"
-              className="inline-flex items-center gap-1.5 bg-black hover:bg-[#1C1C1C] text-white text-[14px] font-medium px-5 py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-md"
+              className="inline-flex items-center gap-1.5 bg-black hover:bg-[#1C1C1C] text-white text-[14px] font-medium px-5 py-2.5 rounded-[10px] transition-all duration-150 active:scale-95 shadow-md"
             >
               <span>Students</span>
               <span aria-hidden="true" className="text-sm">→</span>
             </Link>
             <Link
               href="/colleges"
-              className="inline-flex items-center gap-1.5 bg-black hover:bg-[#1C1C1C] text-white text-[14px] font-medium px-5 py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-md"
+              className="inline-flex items-center gap-1.5 bg-black hover:bg-[#1C1C1C] text-white text-[14px] font-medium px-5 py-2.5 rounded-[10px] transition-all duration-150 active:scale-95 shadow-md"
             >
               <span>Colleges</span>
               <span aria-hidden="true" className="text-sm">→</span>
             </Link>
             <Link
               href="/companies"
-              className="inline-flex items-center gap-1.5 bg-black hover:bg-[#1C1C1C] text-white text-[14px] font-medium px-5 py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-md"
+              className="inline-flex items-center gap-1.5 bg-black hover:bg-[#1C1C1C] text-white text-[14px] font-medium px-5 py-2.5 rounded-[10px] transition-all duration-150 active:scale-95 shadow-md"
             >
               <span>Companies</span>
               <span aria-hidden="true" className="text-sm">→</span>
