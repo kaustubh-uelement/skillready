@@ -1,25 +1,26 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-violet: #7A38E8;
+  --color-violet: #713FFF;
   --color-violet-deep: #4C1D95;
-  --color-violet-soft: #EFE6FD;
-  --color-lilac: #F3ECFE;
+  --color-violet-soft: #F2EEFD;
+  --color-lilac: #F2EEFD;
   --color-blush: #FBEBF7;
-  --color-ink: #0E0E14;
+  --color-ink: #000000;
   --color-ink-60: #4C4C58;
   --color-ink-40: #7A7A88;
   --color-line: #E8E4F0;
   --color-white: #FFFFFF;
+  --color-star-gold: #F3BB04;
 
-  --radius-card: 22px;
+  --radius-card: 20px;
   --radius-lg: 28px;
 
-  --shadow-soft: 0 18px 50px -24px rgba(76, 29, 149, 0.28);
-  --shadow-lift: 0 26px 70px -30px rgba(76, 29, 149, 0.42);
+  --shadow-soft: 0 18px 50px -24px rgba(113, 63, 255, 0.2);
+  --shadow-lift: 0 26px 70px -30px rgba(113, 63, 255, 0.3);
 
-  --font-display: var(--font-poppins);
-  --font-body: var(--font-inter);
+  --font-display: var(--font-host-grotesk), var(--font-inter), sans-serif;
+  --font-body: var(--font-host-grotesk), var(--font-inter), sans-serif;
 }
 
 @layer base {

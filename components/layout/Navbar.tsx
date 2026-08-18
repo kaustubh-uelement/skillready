@@ -34,113 +34,96 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className={`nav ${mobileMenuOpen ? "open" : ""}`} id="nav">
-      <div className="wrap nav-in">
-        <Link href="/" className="logo" aria-label="SkillReady.ai home">
-          <Logo className="text-[#713FFF]" />
-          <span>
-            Skill<span className="dot">Ready</span>.ai
-          </span>
+    <>
+      {/* Top Kit Banner */}
+      <div className="bg-[#713FFF] text-white text-xs md:text-sm py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-1.5 transition-colors">
+        <span>This page is included in a free SaaS Website Kit.</span>
+        <Link href="#cta" className="underline hover:opacity-90 font-semibold inline-flex items-center gap-1">
+          View the complete Kit <span aria-hidden="true">→</span>
         </Link>
+      </div>
 
-        <nav className="nav-links" id="navLinks" aria-label="Main">
-          <Link href="/students" onClick={() => setMobileMenuOpen(false)}>
-            Students
+      <header className={`nav ${mobileMenuOpen ? "open" : ""}`} id="nav">
+        <div className="wrap nav-in flex items-center justify-between py-3.5">
+          <Link href="/" className="logo flex items-center gap-2 font-bold text-xl tracking-tight text-black" aria-label="SkillReady.ai home">
+            <Logo className="text-[#713FFF]" />
+            <span className="font-bold text-[22px] tracking-tight">
+              SkillReady<span className="text-[#713FFF]">.ai</span>
+            </span>
           </Link>
-          <Link href="/companies" onClick={() => setMobileMenuOpen(false)}>
-            Companies
-          </Link>
-          <Link href="/colleges" onClick={() => setMobileMenuOpen(false)}>
-            Colleges
-          </Link>
-          <Link href="/courses" onClick={() => setMobileMenuOpen(false)}>
-            Courses
-          </Link>
-          <Link href="/plans" onClick={() => setMobileMenuOpen(false)}>
-            Plans
-          </Link>
-          <Link href="/insights" onClick={() => setMobileMenuOpen(false)}>
-            Insights
-          </Link>
-        </nav>
 
-        <div className="nav-actions">
-          <div
-            className={`dd ${dropdownOpen ? "open" : ""}`}
-            id="loginDd"
-            ref={dropdownRef}
+          <nav className="nav-links hidden md:flex items-center gap-8 text-[15px] font-medium text-[#4C4C58]" id="navLinks" aria-label="Main">
+            <Link href="/students" className="hover:text-black transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              Students
+            </Link>
+            <Link href="/companies" className="hover:text-black transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              Companies
+            </Link>
+            <Link href="/colleges" className="hover:text-black transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              Colleges
+            </Link>
+            <Link href="/courses" className="hover:text-black transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              Courses
+            </Link>
+            <Link href="/insights" className="hover:text-black transition-colors" onClick={() => setMobileMenuOpen(false)}>
+              Insights
+            </Link>
+          </nav>
+
+          <div className="nav-actions hidden md:flex items-center gap-3">
+            <Link
+              className="bg-black hover:bg-[#222222] text-white text-[14px] font-medium px-5 py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-sm"
+              href="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Contact Us
+            </Link>
+          </div>
+
+          <button
+            className="nav-toggle md:hidden"
+            id="navToggle"
+            aria-expanded={mobileMenuOpen}
+            aria-controls="navLinks"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <button
-              className="btn btn-light btn-sm"
-              id="loginBtn"
-              aria-expanded={dropdownOpen}
-              aria-haspopup="true"
-              onClick={(e) => {
-                e.stopPropagation();
-                setDropdownOpen(!dropdownOpen);
-              }}
-            >
-              Log in
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                aria-hidden="true"
-              >
-                <path d="m6 9 6 6 6-6" />
-              </svg>
-            </button>
-            <div
-              className="dd-panel"
-              role="menu"
-              aria-label="Choose account type"
-            >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-b border-[#E8E4F0] px-6 py-5 flex flex-col gap-4 shadow-xl">
+            <Link href="/students" className="text-base font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>
+              Students
+            </Link>
+            <Link href="/companies" className="text-base font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>
+              Companies
+            </Link>
+            <Link href="/colleges" className="text-base font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>
+              Colleges
+            </Link>
+            <Link href="/courses" className="text-base font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>
+              Courses
+            </Link>
+            <Link href="/insights" className="text-base font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>
+              Insights
+            </Link>
+            <div className="pt-3 border-t border-gray-100 flex flex-col gap-2">
               <Link
-                href="/students"
-                role="menuitem"
-                onClick={() => setDropdownOpen(false)}
+                className="bg-black text-white text-center text-sm font-semibold py-3 rounded-full"
+                href="/contact"
+                onClick={() => setMobileMenuOpen(false)}
               >
-                Student login<span>Learn, exams, jobs, courses</span>
-              </Link>
-              <Link
-                href="/colleges"
-                role="menuitem"
-                onClick={() => setDropdownOpen(false)}
-              >
-                College login<span>Batch monitoring and reports</span>
-              </Link>
-              <Link
-                href="/companies"
-                role="menuitem"
-                onClick={() => setDropdownOpen(false)}
-              >
-                Company login<span>Post roles, filter candidates</span>
+                Contact Us
               </Link>
             </div>
           </div>
-          <Link
-            className="btn btn-dark btn-sm"
-            href="/contact"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Contact us
-          </Link>
-        </div>
-
-        <button
-          className="nav-toggle"
-          id="navToggle"
-          aria-expanded={mobileMenuOpen}
-          aria-controls="navLinks"
-          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
+        )}
+      </header>
+    </>
   );
 }

@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Host_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+
+const hostGrotesk = Host_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-host-grotesk",
+});
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
 });
 
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-poppins",
-});
-
 export const metadata: Metadata = {
-  title: "SkillReady.ai — The bridge between learning and employment",
+  title: "SkillReady.ai — The Bridge Between Learning and Employment",
   description:
-    "Built by trainers. SkillReady makes students skill-ready to company requirements, helps companies hire at no cost, and gives colleges real-time monitoring of training outcomes.",
+    "SkillReady connects students, colleges, and companies through a structured ecosystem that transforms career aspirations into real opportunities.",
 };
 
 export default function RootLayout({
@@ -27,8 +27,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body>
+    <html lang="en" className={`${hostGrotesk.variable} ${inter.variable}`}>
+      <body className="font-sans antialiased text-black bg-white">
         <Navbar />
         {children}
         <Footer />
