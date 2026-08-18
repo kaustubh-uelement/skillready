@@ -88,7 +88,7 @@ export default function AudienceSolutionsSection() {
                 </h3>
                 <Link
                   href={card.href}
-                  className="inline-flex items-center gap-2 rounded-full bg-black hover:bg-[#1C1C1C] text-white text-[13px] sm:text-[14px] font-semibold px-5 py-2.5 transition-all active:scale-95 shadow-md"
+                  className="inline-flex items-center gap-2 rounded-[10px] bg-black hover:bg-[#1C1C1C] text-white text-[13px] sm:text-[14px] font-semibold px-5 py-2.5 transition-all active:scale-95 shadow-md"
                 >
                   <span>{card.btnText}</span>
                   <span aria-hidden="true">→</span>

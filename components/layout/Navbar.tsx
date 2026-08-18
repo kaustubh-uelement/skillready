@@ -72,7 +72,7 @@ export default function Navbar() {
 
           <div className="nav-actions hidden md:flex items-center gap-3">
             <Link
-              className="bg-black hover:bg-[#222222] text-white text-[14px] font-medium px-5 py-2.5 rounded-full transition-all duration-150 active:scale-95 shadow-sm"
+              className="bg-black hover:bg-[#222222] text-white text-[14px] font-medium px-5 py-2.5 rounded-[10px] transition-all duration-150 active:scale-95 shadow-sm"
               href="/contact"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -114,7 +114,7 @@ export default function Navbar() {
             </Link>
             <div className="pt-3 border-t border-gray-100 flex flex-col gap-2">
               <Link
-                className="bg-black text-white text-center text-sm font-semibold py-3 rounded-full"
+                className="bg-black text-white text-center text-sm font-semibold py-3 rounded-[10px]"
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
               >
