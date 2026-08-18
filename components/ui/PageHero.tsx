@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars, react-hooks/set-state-in-effect */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import Link from "next/link";
 import React from "react";
 
@@ -6,6 +6,11 @@ export default function PageHero({ crumb, eyebrow, title, children, actions }: a
   return (
     <div style={{ background: "var(--color-ink)", color: "#fff", padding: "4rem 0 3rem" }}>
       <div className="wrap">
+        {crumb && (
+          <div style={{ fontSize: "0.8rem", color: "rgba(255,255,255,0.5)", marginBottom: "0.8rem" }}>
+            <Link href="/" style={{ color: "rgba(255,255,255,0.7)" }}>Home</Link> / <span>{crumb}</span>
+          </div>
+        )}
         {eyebrow && <span style={{ color: "#C4A6FF", fontSize: "0.85rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.1em", display: "block", marginBottom: "1rem" }}>{eyebrow}</span>}
         <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.2rem)", maxWidth: "800px", lineHeight: 1.1, marginBottom: "1.5rem" }}>
           {title}
