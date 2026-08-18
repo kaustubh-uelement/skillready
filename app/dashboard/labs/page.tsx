@@ -41,7 +41,7 @@ export default function LabsPage() {
             <div
               key={lab.id}
               className={`bg-white rounded-[12px] border p-6 shadow-xs flex flex-col justify-between ${
-                isRunning ? "border-black shadow-xs" : "border-[#E8E4F0]"
+                isRunning ? "border-[#713FFF]/50 shadow-xs" : "border-[#E8E4F0]"
               } ${lab.status === "locked" ? "opacity-45" : ""}`}
             >
               <div>
@@ -65,7 +65,7 @@ export default function LabsPage() {
                 </h3>
                 <div className="font-mono text-[10px] text-[#7A7A88] leading-relaxed">
                   {lab.spec}
-                  {lab.sessionTime && <div className="mt-0.5 text-black font-semibold">SESSION: {lab.sessionTime}</div>}
+                  {lab.sessionTime && <div className="mt-0.5 text-[#713FFF] font-semibold">SESSION: {lab.sessionTime}</div>}
                   {lab.lastUsed && <div className="mt-0.5">LAST USED: {lab.lastUsed}</div>}
                 </div>
               </div>
@@ -75,7 +75,7 @@ export default function LabsPage() {
                   <button
                     type="button"
                     onClick={() => alert(`Opening web terminal console for: ${lab.name}`)}
-                    className="font-mono text-[10px] font-semibold uppercase tracking-wider px-4 py-2 border border-black hover:bg-black hover:text-white rounded-[4px] transition-colors cursor-pointer"
+                    className="font-mono text-[10px] font-semibold uppercase tracking-wider px-4 py-2 border border-[#713FFF] bg-[#713FFF] text-white hover:bg-[#602ee6] rounded-[4px] transition-colors cursor-pointer"
                   >
                     Open Console
                   </button>
@@ -84,7 +84,7 @@ export default function LabsPage() {
                     type="button"
                     disabled={isStarting}
                     onClick={() => handleStartLab(lab.id)}
-                    className="font-mono text-[10px] font-semibold uppercase tracking-wider px-4 py-2 border border-black hover:bg-black hover:text-white rounded-[4px] transition-colors cursor-pointer disabled:opacity-50"
+                    className="font-mono text-[10px] font-semibold uppercase tracking-wider px-4 py-2 border border-[#713FFF] bg-[#713FFF] text-white hover:bg-[#602ee6] rounded-[4px] transition-colors cursor-pointer disabled:opacity-50"
                   >
                     {isStarting ? "Starting…" : "Start Lab"}
                   </button>

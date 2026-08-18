@@ -156,7 +156,7 @@ function CoursesContent() {
                       </div>
                       <div className="w-full bg-[#F4F2FA] h-1.5 rounded-full overflow-hidden">
                         <div
-                          className="bg-black h-full rounded-full transition-all duration-300"
+                          className="bg-[#713FFF] h-full rounded-full transition-all duration-300"
                           style={{ width: `${progress}%` }}
                         />
                       </div>
@@ -168,9 +168,9 @@ function CoursesContent() {
                   <span
                     className={`font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border rounded-[4px] ${
                       c?.status === "complete"
-                        ? "border-black bg-black text-white"
+                        ? "border-[#713FFF] bg-[#713FFF] text-white"
                         : c?.status === "active"
-                        ? "border-black text-black"
+                        ? "border-[#713FFF]/40 bg-[#F2EEFD] text-[#713FFF]"
                         : "border-[#D9D9D9] text-[#A8A8A8]"
                     }`}
                   >
@@ -224,8 +224,8 @@ function CoursesContent() {
                     onClick={() => toggleModule(selectedTrack.id, idx)}
                     className={`w-6 h-6 rounded-[4px] border font-mono text-xs flex items-center justify-center transition-all cursor-pointer ${
                       mod.done
-                        ? "bg-black border-black text-white"
-                        : "border-[#D9D9D9] bg-white hover:border-black text-black"
+                        ? "bg-[#713FFF] border-[#713FFF] text-white"
+                        : "border-[#D9D9D9] bg-white hover:border-[#713FFF] text-black"
                     }`}
                   >
                     {mod.done ? "✓" : ""}
@@ -244,10 +244,10 @@ function CoursesContent() {
                 <button
                   type="button"
                   onClick={() => toggleModule(selectedTrack.id, idx)}
-                  className={`font-mono text-[10px] font-semibold uppercase tracking-wider px-3 py-1.5 border rounded-[4px] transition-all cursor-pointer ${
+                  className={`font-mono text-[10px] font-semibold uppercase tracking-wider px-3.5 py-1.5 border rounded-[4px] transition-all cursor-pointer ${
                     mod.done
-                      ? "border-[#E8E4F0] bg-[#FBF9FF] text-[#7A7A88] hover:border-black hover:text-black"
-                      : "border-black bg-black text-white hover:bg-[#222]"
+                      ? "border-[#E8E4F0] bg-[#FBF9FF] text-[#7A7A88] hover:border-[#713FFF] hover:text-[#713FFF]"
+                      : "border-[#713FFF] bg-[#713FFF] text-white hover:bg-[#602ee6]"
                   }`}
                 >
                   {mod.done ? "Review" : "Start"}

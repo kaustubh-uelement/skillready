@@ -142,7 +142,7 @@ export default function DashboardLayout({
             href="/dashboard/profile"
             className="flex items-center gap-2.5 px-2.5 py-1 rounded-[8px] hover:bg-[#F4F2FA] transition-colors"
           >
-            <span className="w-7 h-7 rounded-[6px] border border-[#E2DEEA] bg-white flex items-center justify-center font-mono text-[11px] font-bold text-black">
+            <span className="w-7 h-7 rounded-[6px] bg-[#F2EEFD] text-[#713FFF] border border-[#713FFF]/20 flex items-center justify-center font-mono text-[11px] font-bold">
               {currentUser.initials}
             </span>
             <span className="text-[13px] font-medium text-black hidden sm:inline">
@@ -153,7 +153,7 @@ export default function DashboardLayout({
           <button
             type="button"
             onClick={() => signOut({ callbackUrl: "/" })}
-            className="font-mono text-[11px] font-semibold uppercase tracking-wider px-3.5 py-1.5 border border-black text-black hover:bg-black hover:text-white rounded-[6px] transition-all cursor-pointer"
+            className="font-mono text-[11px] font-semibold uppercase tracking-wider px-3.5 py-1.5 border border-[#713FFF]/40 text-[#713FFF] hover:bg-[#713FFF] hover:text-white rounded-[6px] transition-all cursor-pointer"
           >
             Log Out
           </button>
@@ -171,7 +171,7 @@ export default function DashboardLayout({
           <div className="overflow-y-auto">
             {/* User header */}
             <div className="p-5 border-b border-[#E8E4F0]">
-              <div className="w-8 h-8 rounded-[6px] bg-black text-white flex items-center justify-center font-bold text-xs mb-3 shadow-xs">
+              <div className="w-8 h-8 rounded-[6px] bg-[#713FFF] text-white flex items-center justify-center font-bold text-xs mb-3 shadow-xs">
                 {currentUser.initials}
               </div>
               <div className="text-[14px] font-bold text-black leading-tight truncate">
@@ -193,7 +193,7 @@ export default function DashboardLayout({
                     onClick={() => setMobileSidebarOpen(false)}
                     className={`flex items-center gap-3 px-3.5 py-2.5 rounded-[8px] text-[13px] font-medium transition-all duration-150 ${
                       active
-                        ? "bg-black text-white font-semibold shadow-xs"
+                        ? "bg-[#713FFF] text-white font-semibold shadow-xs"
                         : "text-[#4C4C58] hover:bg-[#F4F2FA] hover:text-black"
                     }`}
                   >
@@ -212,7 +212,7 @@ export default function DashboardLayout({
             <button
               type="button"
               onClick={() => signOut({ callbackUrl: "/" })}
-              className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-[8px] text-[13px] font-medium text-[#7A7A88] hover:text-red-600 hover:bg-red-50 transition-colors cursor-pointer"
+              className="w-full flex items-center gap-3 px-3.5 py-2.5 rounded-[8px] text-[13px] font-medium text-[#7A7A88] hover:text-[#713FFF] hover:bg-[#F2EEFD] transition-colors cursor-pointer"
             >
               <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4">
                 <path d="M6 2H2v12h4M10 5l3 3-3 3M13 8H6" />

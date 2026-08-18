@@ -33,18 +33,18 @@ export default function CertificationsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* ── Earned Certificate ──────────────────────────────────── */}
-        <div className="bg-white rounded-[12px] border border-black p-6 shadow-xs relative flex flex-col justify-between">
+        <div className="bg-white rounded-[12px] border border-[#713FFF]/40 p-6 shadow-xs relative flex flex-col justify-between">
           <button
             type="button"
             onClick={handleDownload}
             disabled={downloading}
-            className="absolute top-5 right-5 font-mono text-[10px] uppercase tracking-wider px-3 py-1.5 border border-black hover:bg-black hover:text-white transition-all rounded-[4px] cursor-pointer"
+            className="absolute top-5 right-5 font-mono text-[10px] uppercase tracking-wider px-3 py-1.5 border border-[#713FFF] bg-[#713FFF] text-white hover:bg-[#602ee6] transition-all rounded-[4px] cursor-pointer"
           >
             {downloading ? "Downloading…" : "↓ PDF"}
           </button>
 
           <div>
-            <div className="w-12 h-12 rounded-full border border-black flex items-center justify-center font-display font-bold text-sm mb-4">
+            <div className="w-12 h-12 rounded-full border border-[#713FFF]/30 bg-[#F2EEFD] text-[#713FFF] flex items-center justify-center font-display font-bold text-sm mb-4">
               SR
             </div>
             <h3 className="text-[20px] font-bold text-black font-display">

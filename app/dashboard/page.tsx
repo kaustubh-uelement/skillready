@@ -119,7 +119,7 @@ export default function DashboardOverviewPage() {
         <button
           type="button"
           onClick={() => openZoomForSession(0)}
-          className="inline-flex items-center justify-center gap-2 bg-black hover:bg-[#1E1E1E] text-white font-mono text-[11px] uppercase tracking-wider px-5 py-3 rounded-[8px] transition-all duration-150 active:scale-98 shadow-xs cursor-pointer"
+          className="inline-flex items-center justify-center gap-2 bg-[#713FFF] hover:bg-[#602ee6] text-white font-mono text-[11px] uppercase tracking-wider px-5 py-3 rounded-[8px] transition-all duration-150 active:scale-98 shadow-xs cursor-pointer"
         >
           <span>↗ Join Today&apos;s Session</span>
         </button>
@@ -227,7 +227,7 @@ export default function DashboardOverviewPage() {
                       </div>
                       <div className="w-full bg-[#F4F2FA] h-1.5 rounded-full overflow-hidden">
                         <div
-                          className="bg-black h-full rounded-full transition-all duration-300"
+                          className="bg-[#713FFF] h-full rounded-full transition-all duration-300"
                           style={{ width: `${uc.progress}%` }}
                         />
                       </div>
@@ -239,9 +239,9 @@ export default function DashboardOverviewPage() {
                   <span
                     className={`font-mono text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 border rounded-[4px] ${
                       uc.status === "complete"
-                        ? "border-black bg-black text-white"
+                        ? "border-[#713FFF] bg-[#713FFF] text-white"
                         : uc.status === "active"
-                        ? "border-black text-black"
+                        ? "border-[#713FFF]/40 bg-[#F2EEFD] text-[#713FFF]"
                         : "border-[#D9D9D9] text-[#A8A8A8]"
                     }`}
                   >
@@ -278,7 +278,7 @@ export default function DashboardOverviewPage() {
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-[8px] border border-[#E8E4F0] bg-[#FBF9FF] flex flex-col items-center justify-center text-center flex-none font-mono">
                   <span className="text-[16px] font-bold text-black leading-none">{sess.day}</span>
-                  <span className="text-[9px] text-[#7A7A88]">{sess.mon}</span>
+                  <span className="text-[9px] text-[#713FFF] font-bold">{sess.mon}</span>
                 </div>
 
                 <div>
@@ -302,10 +302,10 @@ export default function DashboardOverviewPage() {
                   e.stopPropagation();
                   openZoomForSession(idx);
                 }}
-                className={`font-mono text-[10px] font-semibold uppercase tracking-wider px-3.5 py-1.5 border rounded-[4px] transition-all ${
+                className={`font-mono text-[10px] font-semibold uppercase tracking-wider px-3.5 py-1.5 border rounded-[4px] transition-all cursor-pointer ${
                   sess.live
-                    ? "border-black bg-black text-white hover:bg-[#222222]"
-                    : "border-black text-black hover:bg-black hover:text-white"
+                    ? "border-[#713FFF] bg-[#713FFF] text-white hover:bg-[#602ee6]"
+                    : "border-[#E2DEEA] text-[#4C4C58] hover:border-[#713FFF] hover:text-[#713FFF]"
                 }`}
               >
                 {sess.live ? "Join Live" : "Join"}
@@ -334,7 +334,7 @@ export default function DashboardOverviewPage() {
 
             <div className="py-5 space-y-4">
               <div className="bg-[#FBF9FF] border border-[#E8E4F0] p-5 text-center rounded-[10px]">
-                <div className="w-12 h-12 bg-black text-white font-mono font-bold text-xs flex items-center justify-center mx-auto mb-3 rounded-[6px]">
+                <div className="w-12 h-12 bg-[#713FFF] text-white font-mono font-bold text-xs flex items-center justify-center mx-auto mb-3 rounded-[6px]">
                   ZOOM
                 </div>
                 <h3 className="text-[16px] font-bold text-black font-display">
@@ -349,7 +349,7 @@ export default function DashboardOverviewPage() {
                     href={`https://zoom.us/j/${activeSession.id.replace(/\s/g, "")}?pwd=${activeSession.pass}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-black hover:bg-[#222] text-white font-mono text-[11px] uppercase tracking-wider py-3 rounded-[6px] transition-all"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#713FFF] hover:bg-[#602ee6] text-white font-mono text-[11px] uppercase tracking-wider py-3 rounded-[6px] transition-all"
                   >
                     Open in Zoom
                   </a>
@@ -361,7 +361,7 @@ export default function DashboardOverviewPage() {
                       setCopiedLink(true);
                       setTimeout(() => setCopiedLink(false), 2000);
                     }}
-                    className="w-full py-2 font-mono text-[10px] uppercase tracking-wider border border-[#E8E4F0] hover:border-black text-black rounded-[6px] transition-colors cursor-pointer"
+                    className="w-full py-2 font-mono text-[10px] uppercase tracking-wider border border-[#E8E4F0] hover:border-[#713FFF] text-[#4C4C58] hover:text-[#713FFF] rounded-[6px] transition-colors cursor-pointer"
                   >
                     {copiedLink ? "✓ Link Copied!" : "Copy Meeting Link"}
                   </button>
@@ -402,7 +402,7 @@ export default function DashboardOverviewPage() {
               <button
                 type="button"
                 onClick={() => setZoomModalOpen(false)}
-                className="font-mono text-[11px] uppercase tracking-wider px-4 py-2 bg-black text-white rounded-[6px]"
+                className="font-mono text-[11px] uppercase tracking-wider px-4 py-2 bg-[#713FFF] hover:bg-[#602ee6] text-white rounded-[6px] transition-colors cursor-pointer"
               >
                 Close
               </button>

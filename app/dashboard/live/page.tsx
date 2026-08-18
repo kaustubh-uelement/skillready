@@ -71,10 +71,10 @@ export default function LiveSessionsPage() {
                   e.stopPropagation();
                   openZoomForSession(idx);
                 }}
-                className={`font-mono text-[10px] font-semibold uppercase tracking-wider px-3.5 py-1.5 border rounded-[4px] transition-all ${
+                className={`font-mono text-[10px] font-semibold uppercase tracking-wider px-3.5 py-1.5 border rounded-[4px] transition-all cursor-pointer ${
                   sess.live
-                    ? "border-black bg-black text-white hover:bg-[#222]"
-                    : "border-black text-black hover:bg-black hover:text-white"
+                    ? "border-[#713FFF] bg-[#713FFF] text-white hover:bg-[#602ee6]"
+                    : "border-[#E2DEEA] text-[#4C4C58] hover:border-[#713FFF] hover:text-[#713FFF]"
                 }`}
               >
                 {sess.live ? "Join Live" : "Join"}
@@ -99,7 +99,7 @@ export default function LiveSessionsPage() {
               className="p-5 flex items-center justify-between gap-4 hover:bg-[#FBF9FF] transition-colors"
             >
               <div className="flex items-center gap-4">
-                <div className="w-10 h-10 rounded-[8px] border border-black bg-black text-white flex items-center justify-center flex-none">
+                <div className="w-10 h-10 rounded-[8px] border border-[#713FFF]/20 bg-[#F2EEFD] text-[#713FFF] flex items-center justify-center flex-none">
                   <svg className="w-4 h-4 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
                     <polygon points="5 3 19 12 5 21 5 3" />
                   </svg>
@@ -115,7 +115,7 @@ export default function LiveSessionsPage() {
               <button
                 type="button"
                 onClick={() => alert(`Playing recording: ${rec.title}`)}
-                className="font-mono text-[10px] font-semibold uppercase tracking-wider px-3 py-1.5 border border-[#E8E4F0] hover:border-black text-black rounded-[4px] transition-colors cursor-pointer"
+                className="font-mono text-[10px] font-semibold uppercase tracking-wider px-3 py-1.5 border border-[#E8E4F0] hover:border-[#713FFF] text-[#4C4C58] hover:text-[#713FFF] rounded-[4px] transition-colors cursor-pointer"
               >
                 Watch
               </button>
@@ -143,7 +143,7 @@ export default function LiveSessionsPage() {
 
             <div className="py-5 space-y-4">
               <div className="bg-[#FBF9FF] border border-[#E8E4F0] p-5 text-center rounded-[10px]">
-                <div className="w-12 h-12 bg-black text-white font-mono font-bold text-xs flex items-center justify-center mx-auto mb-3 rounded-[6px]">
+                <div className="w-12 h-12 bg-[#713FFF] text-white font-mono font-bold text-xs flex items-center justify-center mx-auto mb-3 rounded-[6px]">
                   ZOOM
                 </div>
                 <h3 className="text-[16px] font-bold text-black font-display">
@@ -158,7 +158,7 @@ export default function LiveSessionsPage() {
                     href={`https://zoom.us/j/${activeSession.id.replace(/\s/g, "")}?pwd=${activeSession.pass}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-2 bg-black hover:bg-[#222] text-white font-mono text-[11px] uppercase tracking-wider py-3 rounded-[6px] transition-all"
+                    className="w-full inline-flex items-center justify-center gap-2 bg-[#713FFF] hover:bg-[#602ee6] text-white font-mono text-[11px] uppercase tracking-wider py-3 rounded-[6px] transition-all"
                   >
                     Open in Zoom
                   </a>
@@ -170,7 +170,7 @@ export default function LiveSessionsPage() {
                       setCopiedLink(true);
                       setTimeout(() => setCopiedLink(false), 2000);
                     }}
-                    className="w-full py-2 font-mono text-[10px] uppercase tracking-wider border border-[#E8E4F0] hover:border-black text-black rounded-[6px] transition-colors cursor-pointer"
+                    className="w-full py-2 font-mono text-[10px] uppercase tracking-wider border border-[#E8E4F0] hover:border-[#713FFF] text-[#4C4C58] hover:text-[#713FFF] rounded-[6px] transition-colors cursor-pointer"
                   >
                     {copiedLink ? "✓ Link Copied!" : "Copy Meeting Link"}
                   </button>
@@ -211,7 +211,7 @@ export default function LiveSessionsPage() {
               <button
                 type="button"
                 onClick={() => setZoomModalOpen(false)}
-                className="font-mono text-[11px] uppercase tracking-wider px-4 py-2 bg-black text-white rounded-[6px]"
+                className="font-mono text-[11px] uppercase tracking-wider px-4 py-2 bg-[#713FFF] hover:bg-[#602ee6] text-white rounded-[6px] transition-colors cursor-pointer"
               >
                 Close
               </button>

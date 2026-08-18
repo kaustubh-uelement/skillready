@@ -32,7 +32,7 @@ export default function ProfilePage() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         {/* ── Profile Left Card ─────────────────────────────────────── */}
         <div className="lg:col-span-4 bg-white rounded-[12px] border border-[#E8E4F0] p-6 text-center shadow-xs">
-          <div className="w-20 h-20 rounded-full border border-black flex items-center justify-center font-display text-2xl font-bold mx-auto mb-4">
+          <div className="w-20 h-20 rounded-full border border-[#713FFF]/30 bg-[#F2EEFD] text-[#713FFF] flex items-center justify-center font-display text-2xl font-bold mx-auto mb-4">
             {currentUser.initials}
           </div>
           <h2 className="text-[22px] font-bold text-black font-display leading-tight">
@@ -42,7 +42,7 @@ export default function ProfilePage() {
             {currentUser.email}
           </div>
           <div className="mt-4">
-            <span className="font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1 border border-black rounded-[4px]">
+            <span className="font-mono text-[10px] font-bold uppercase tracking-wider px-3 py-1 border border-[#713FFF]/40 bg-[#F2EEFD] text-[#713FFF] rounded-[4px]">
               {currentUser.role}
             </span>
           </div>
