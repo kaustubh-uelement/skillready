@@ -1,11 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
 import { Logo } from "./Logo";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { data: session } = useSession();
 
   return (
     <>
@@ -45,18 +48,41 @@ export default function Navbar() {
           </nav>
 
           <div className="nav-actions hidden md:flex items-center gap-3">
-            <Link
-              href="/login"
-              className="text-[14px] font-semibold text-[#4C4C58] hover:text-black px-3 py-2 rounded-[10px] transition-colors"
-            >
-              Log in
-            </Link>
-            <Link
-              className="bg-black hover:bg-[#222222] text-white text-[14px] font-medium px-4.5 py-2.5 rounded-[10px] transition-all duration-150 active:scale-95 shadow-xs"
-              href="/signup"
-            >
-              Sign up
-            </Link>
+            {session?.user ? (
+              <div className="flex items-center gap-3">
+                <Link
+                  href="/dashboard"
+                  className="inline-flex items-center gap-2 bg-[#F2EEFD] hover:bg-[#EBE7F7] text-[#713FFF] font-semibold text-[13px] px-3.5 py-1.5 rounded-full border border-[#713FFF]/20 transition-all shadow-2xs"
+                >
+                  <span className="w-5 h-5 rounded-full bg-[#713FFF] text-white flex items-center justify-center text-[10px] font-bold">
+                    {(session.user as any)?.initials || "JD"}
+                  </span>
+                  <span>Dashboard</span>
+                </Link>
+                <button
+                  type="button"
+                  onClick={() => signOut({ callbackUrl: "/" })}
+                  className="text-[13px] font-semibold text-[#7A7A88] hover:text-black transition-colors cursor-pointer"
+                >
+                  Log out
+                </button>
+              </div>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className="text-[14px] font-semibold text-[#4C4C58] hover:text-black px-3 py-2 rounded-[10px] transition-colors"
+                >
+                  Log in
+                </Link>
+                <Link
+                  className="bg-black hover:bg-[#222222] text-white text-[14px] font-medium px-4.5 py-2.5 rounded-[10px] transition-all duration-150 active:scale-95 shadow-xs"
+                  href="/signup"
+                >
+                  Sign up
+                </Link>
+              </>
+            )}
           </div>
 
           <button
@@ -92,22 +118,41 @@ export default function Navbar() {
               Insights
             </Link>
             <div className="pt-3 border-t border-gray-100 flex flex-col gap-2.5">
-              <div className="grid grid-cols-2 gap-2">
-                <Link
-                  className="bg-white border border-[#E2DEEA] text-black text-center text-sm font-semibold py-2.5 rounded-[10px]"
-                  href="/login"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Log in
-                </Link>
-                <Link
-                  className="bg-black text-white text-center text-sm font-semibold py-2.5 rounded-[10px]"
-                  href="/signup"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  Sign up
-                </Link>
-              </div>
+              {session?.user ? (
+                <>
+                  <Link
+                    className="bg-[#713FFF] text-white text-center text-sm font-semibold py-2.5 rounded-[10px]"
+                    href="/dashboard"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Open Dashboard
+                  </Link>
+                  <button
+                    type="button"
+                    onClick={() => signOut({ callbackUrl: "/" })}
+                    className="bg-white border border-[#E2DEEA] text-black text-center text-sm font-semibold py-2.5 rounded-[10px]"
+                  >
+                    Sign Out
+                  </button>
+                </>
+              ) : (
+                <div className="grid grid-cols-2 gap-2">
+                  <Link
+                    className="bg-white border border-[#E2DEEA] text-black text-center text-sm font-semibold py-2.5 rounded-[10px]"
+                    href="/login"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Log in
+                  </Link>
+                  <Link
+                    className="bg-black text-white text-center text-sm font-semibold py-2.5 rounded-[10px]"
+                    href="/signup"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Sign up
+                  </Link>
+                </div>
+              )}
               <Link
                 className="bg-[#F2EEFD] text-[#4C1D95] text-center text-sm font-semibold py-2.5 rounded-[10px]"
                 href="/contact"

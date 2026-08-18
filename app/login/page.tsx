@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 import useReveal from "@/lib/useReveal";
-import useForm from "@/lib/useForm";
 import RoleTabs from "@/components/ui/RoleTabs";
 import { Field, FormMessage } from "@/components/ui/Field";
 
@@ -63,17 +65,41 @@ function LinkedInIcon() {
 
 /* Individual Login Panes */
 function StudentLoginPane() {
+  const router = useRouter();
   const [rememberMe, setRememberMe] = useState(false);
-  const f = useForm(
-    { user: "", password: "" },
-    {
-      required: [
-        { name: "user", label: "registered email or mobile number" },
-        { name: "password", label: "your password" },
-      ],
-      success: "Welcome back! Redirecting to student dashboard...",
+  const [busy, setBusy] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const [email, setEmail] = useState("john.doe@skillready.ai");
+  const [password, setPassword] = useState("skillready2026");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !password) {
+      setErrorMsg("Please provide your email and password.");
+      return;
     }
-  );
+    setBusy(true);
+    setErrorMsg("");
+
+    try {
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (res?.error) {
+        setErrorMsg("Invalid credentials. Please verify your email and password.");
+        setBusy(false);
+      } else {
+        router.push("/dashboard");
+      }
+    } catch {
+      setErrorMsg("An error occurred during authentication.");
+      setBusy(false);
+    }
+  };
 
   return (
     <div>
@@ -82,7 +108,7 @@ function StudentLoginPane() {
           Student Log in
         </h2>
         <p className="text-[14px] text-[#4C4C58]">
-          Enter your credentials to access your courses, mock exams, and recruiter profile.
+          Enter your credentials to access your courses, live masterclasses, and employability dashboard.
         </p>
       </div>
 
@@ -102,14 +128,14 @@ function StudentLoginPane() {
       </div>
 
       {/* Form Fields */}
-      <form onSubmit={f.submit}>
+      <form onSubmit={handleSubmit}>
         <Field
-          label="Email or Mobile number"
+          label="Email Address or Mobile"
           id="student-id"
           type="text"
-          value={f.values.user}
-          onChange={f.set("user")}
-          placeholder="e.g. rahul@example.com or 9876543210"
+          value={email}
+          onChange={(e: any) => setEmail(e.target.value)}
+          placeholder="e.g. john.doe@skillready.ai"
           autoComplete="username"
           icon={
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -122,8 +148,8 @@ function StudentLoginPane() {
           label="Password"
           id="student-pw"
           type="password"
-          value={f.values.password}
-          onChange={f.set("password")}
+          value={password}
+          onChange={(e: any) => setPassword(e.target.value)}
           placeholder="••••••••"
           autoComplete="current-password"
           icon={
@@ -155,14 +181,33 @@ function StudentLoginPane() {
         {/* Submit Button */}
         <button
           type="submit"
-          disabled={f.busy}
+          disabled={busy}
           className="w-full inline-flex items-center justify-center gap-2 bg-black hover:bg-[#1E1E1E] text-white text-[15px] font-semibold py-3 px-6 rounded-[10px] transition-all duration-150 active:scale-[0.99] shadow-xs cursor-pointer disabled:opacity-60"
         >
-          <span>{f.busy ? "Logging in..." : "Log in to Student Portal"}</span>
+          <span>{busy ? "Authenticating with NextAuth..." : "Sign in to Dashboard"}</span>
           <span className="text-base transition-transform group-hover:translate-x-0.5">→</span>
         </button>
 
-        <FormMessage>{f.message}</FormMessage>
+        {errorMsg && <FormMessage type="error">{errorMsg}</FormMessage>}
+
+        {/* Demo Credentials Box */}
+        <div className="mt-4 p-3 bg-[#FBF9FF] border border-dashed border-[#713FFF]/40 rounded-[10px] text-[12px] text-[#4C4C58]">
+          <div className="font-bold text-black mb-1 flex items-center justify-between">
+            <span>🔑 Demo Credentials:</span>
+            <button
+              type="button"
+              onClick={() => {
+                setEmail("john.doe@skillready.ai");
+                setPassword("skillready2026");
+              }}
+              className="text-[#713FFF] underline text-[11px] font-semibold hover:text-[#4C1D95]"
+            >
+              Fill Demo User
+            </button>
+          </div>
+          <div>Email: <span className="font-mono font-semibold text-black">john.doe@skillready.ai</span></div>
+          <div>Password: <span className="font-mono font-semibold text-black">skillready2026</span></div>
+        </div>
 
         <div className="mt-5 pt-5 border-t border-[#E8E4F0] text-center text-[13px] text-[#4C4C58]">
           <span>Don&apos;t have an account yet? </span>
@@ -176,17 +221,37 @@ function StudentLoginPane() {
 }
 
 function CollegeLoginPane() {
+  const router = useRouter();
   const [rememberMe, setRememberMe] = useState(false);
-  const f = useForm(
-    { user: "", password: "" },
-    {
-      required: [
-        { name: "user", label: "institutional email address" },
-        { name: "password", label: "your password" },
-      ],
-      success: "Verified! Loading College Placement portal...",
+  const [busy, setBusy] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const [email, setEmail] = useState("tpo@college.skillready.ai");
+  const [password, setPassword] = useState("skillready2026");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setBusy(true);
+    setErrorMsg("");
+
+    try {
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (res?.error) {
+        setErrorMsg("Invalid institutional credentials.");
+        setBusy(false);
+      } else {
+        router.push("/dashboard");
+      }
+    } catch {
+      setErrorMsg("An error occurred.");
+      setBusy(false);
     }
-  );
+  };
 
   return (
     <div>
@@ -199,14 +264,14 @@ function CollegeLoginPane() {
         </p>
       </div>
 
-      <form onSubmit={f.submit}>
+      <form onSubmit={handleSubmit}>
         <Field
           label="Institutional Email"
           id="college-id"
           type="email"
-          value={f.values.user}
-          onChange={f.set("user")}
-          placeholder="tpo@yourcollege.ac.in"
+          value={email}
+          onChange={(e: any) => setEmail(e.target.value)}
+          placeholder="tpo@college.skillready.ai"
           autoComplete="email"
           icon={
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -219,8 +284,8 @@ function CollegeLoginPane() {
           label="Password"
           id="college-pw"
           type="password"
-          value={f.values.password}
-          onChange={f.set("password")}
+          value={password}
+          onChange={(e: any) => setPassword(e.target.value)}
           placeholder="••••••••"
           autoComplete="current-password"
           icon={
@@ -250,14 +315,14 @@ function CollegeLoginPane() {
 
         <button
           type="submit"
-          disabled={f.busy}
+          disabled={busy}
           className="w-full inline-flex items-center justify-center gap-2 bg-black hover:bg-[#1E1E1E] text-white text-[15px] font-semibold py-3 px-6 rounded-[10px] transition-all duration-150 active:scale-[0.99] shadow-xs cursor-pointer disabled:opacity-60"
         >
-          <span>{f.busy ? "Authenticating..." : "Open College Dashboard"}</span>
+          <span>{busy ? "Authenticating..." : "Open College Dashboard"}</span>
           <span className="text-base">→</span>
         </button>
 
-        <FormMessage>{f.message}</FormMessage>
+        {errorMsg && <FormMessage type="error">{errorMsg}</FormMessage>}
 
         <div className="mt-5 pt-5 border-t border-[#E8E4F0] text-center text-[13px] text-[#4C4C58]">
           <span>Not a partner institution yet? </span>
@@ -271,17 +336,37 @@ function CollegeLoginPane() {
 }
 
 function CompanyLoginPane() {
+  const router = useRouter();
   const [rememberMe, setRememberMe] = useState(false);
-  const f = useForm(
-    { user: "", password: "" },
-    {
-      required: [
-        { name: "user", label: "work email" },
-        { name: "password", label: "your password" },
-      ],
-      success: "Access granted. Loading Employer Hiring portal...",
+  const [busy, setBusy] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const [email, setEmail] = useState("recruiter@company.skillready.ai");
+  const [password, setPassword] = useState("skillready2026");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setBusy(true);
+    setErrorMsg("");
+
+    try {
+      const res = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+      });
+
+      if (res?.error) {
+        setErrorMsg("Invalid company credentials.");
+        setBusy(false);
+      } else {
+        router.push("/dashboard");
+      }
+    } catch {
+      setErrorMsg("An error occurred during sign in.");
+      setBusy(false);
     }
-  );
+  };
 
   return (
     <div>
@@ -309,14 +394,14 @@ function CompanyLoginPane() {
         <div className="flex-1 h-px bg-[#E8E4F0]" />
       </div>
 
-      <form onSubmit={f.submit}>
+      <form onSubmit={handleSubmit}>
         <Field
           label="Work Email"
           id="company-id"
           type="email"
-          value={f.values.user}
-          onChange={f.set("user")}
-          placeholder="you@company.com"
+          value={email}
+          onChange={(e: any) => setEmail(e.target.value)}
+          placeholder="recruiter@company.skillready.ai"
           autoComplete="email"
           icon={
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -329,8 +414,8 @@ function CompanyLoginPane() {
           label="Password"
           id="company-pw"
           type="password"
-          value={f.values.password}
-          onChange={f.set("password")}
+          value={password}
+          onChange={(e: any) => setPassword(e.target.value)}
           placeholder="••••••••"
           autoComplete="current-password"
           icon={
@@ -360,14 +445,14 @@ function CompanyLoginPane() {
 
         <button
           type="submit"
-          disabled={f.busy}
+          disabled={busy}
           className="w-full inline-flex items-center justify-center gap-2 bg-black hover:bg-[#1E1E1E] text-white text-[15px] font-semibold py-3 px-6 rounded-[10px] transition-all duration-150 active:scale-[0.99] shadow-xs cursor-pointer disabled:opacity-60"
         >
-          <span>{f.busy ? "Authenticating..." : "Open Hiring Dashboard"}</span>
+          <span>{busy ? "Authenticating..." : "Open Hiring Dashboard"}</span>
           <span className="text-base">→</span>
         </button>
 
-        <FormMessage>{f.message}</FormMessage>
+        {errorMsg && <FormMessage type="error">{errorMsg}</FormMessage>}
 
         <div className="mt-5 pt-5 border-t border-[#E8E4F0] text-center text-[13px] text-[#4C4C58]">
           <span>Hiring for the first time? </span>
