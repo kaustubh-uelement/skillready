@@ -50,7 +50,9 @@ export default function AudienceSolutionsSection() {
           </h2>
 
           <p className="text-[16px] sm:text-[18px] text-[#4C4C58] leading-relaxed max-w-[660px]">
-            SkillReady creates a connected ecosystem where students develop industry-relevant skills, colleges monitor progress and placement readiness, and companies gain access to better-prepared candidates.
+            SkillReady creates a connected ecosystem where students develop
+            industry-relevant skills, colleges monitor progress and placement
+            readiness, and companies gain access to better-prepared candidates.
           </p>
         </div>
 
@@ -59,7 +61,7 @@ export default function AudienceSolutionsSection() {
           {CARDS_DATA.map((card) => (
             <div
               key={card.tag}
-              className={`group relative overflow-hidden rounded-[26px] border ${card.cardBorder} bg-gradient-to-b ${card.bgGradient} p-6 sm:p-7 flex flex-col justify-between min-h-[460px] shadow-lg transition-transform duration-200 hover:-translate-y-1`}
+              className={`group relative overflow-hidden rounded-[10px]  bg-gradient-to-b ${card.bgGradient} p-6 sm:p-7 flex flex-col justify-between min-h-[460px] shadow-lg transition-transform duration-200 hover:-translate-y-1`}
             >
               {/* Top Tag Pill */}
               <div className="relative z-10">
@@ -69,13 +71,13 @@ export default function AudienceSolutionsSection() {
               </div>
 
               {/* Central Duotone Graphic Image */}
-              <div className="absolute inset-0 z-0 flex items-center justify-center p-2">
+              <div className="absolute inset-0 z-0 flex items-center justify-center p-0">
                 <div className="relative w-full h-full">
                   <Image
                     src={card.image}
                     alt={card.title}
                     fill
-                    className="object-cover object-center rounded-[24px]"
+                    className="object-cover object-center "
                     sizes="(max-width: 768px) 100vw, 360px"
                   />
                 </div>
