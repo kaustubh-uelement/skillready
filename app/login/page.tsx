@@ -7,7 +7,7 @@ import { Arrow, Tick } from '@/components/ui/Icons'
 import { Field, FormMessage } from '@/components/ui/Field'
 
 /* AUTH: pass onSubmit to useForm to call your real auth endpoint. */
-function LoginPane({ heading, idLabel, idType, idPlaceholder, cta, footer }: any) {
+function LoginPane({ heading, idLabel, idType, idPlaceholder, cta, footer }: /* eslint-disable-line @typescript-eslint/no-explicit-any */ any) {
   const f = useForm(
     { user: '', password: '' },
     {
