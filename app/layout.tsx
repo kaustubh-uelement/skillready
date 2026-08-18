@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Host_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 
 const hostGrotesk = Host_Grotesk({
   subsets: ["latin"],
@@ -21,6 +19,9 @@ export const metadata: Metadata = {
     "SkillReady connects students, colleges, and companies through a structured ecosystem that transforms career aspirations into real opportunities.",
 };
 
+import AuthProvider from "@/components/providers/AuthProvider";
+import ConditionalChrome from "@/components/layout/ConditionalChrome";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,9 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${hostGrotesk.variable} ${inter.variable}`}>
       <body className="font-sans antialiased text-black bg-white">
-        <Navbar />
-        {children}
-        <Footer />
+        <AuthProvider>
+          <ConditionalChrome>{children}</ConditionalChrome>
+        </AuthProvider>
       </body>
     </html>
   );
