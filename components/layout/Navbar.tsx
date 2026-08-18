@@ -1,44 +1,18 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Logo } from "./Logo";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setDropdownOpen(false);
-      }
-    }
-
-    function handleEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        setDropdownOpen(false);
-      }
-    }
-
-    document.addEventListener("click", handleClickOutside);
-    document.addEventListener("keydown", handleEscape);
-    return () => {
-      document.removeEventListener("click", handleClickOutside);
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, []);
 
   return (
     <>
       {/* Top Kit Banner */}
       <div className="bg-[#713FFF] text-white text-xs md:text-sm py-2 px-4 text-center font-medium tracking-wide flex items-center justify-center gap-1.5 transition-colors">
         <span>This page is included in a free SaaS Website Kit.</span>
-        <Link href="#cta" className="underline hover:opacity-90 font-semibold inline-flex items-center gap-1">
+        <Link href="/#cta" className="underline hover:opacity-90 font-semibold inline-flex items-center gap-1">
           View the complete Kit <span aria-hidden="true">→</span>
         </Link>
       </div>
@@ -52,7 +26,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <nav className="nav-links hidden md:flex items-center gap-8 text-[15px] font-medium text-[#4C4C58]" id="navLinks" aria-label="Main">
+          <nav className="nav-links hidden md:flex items-center gap-7 lg:gap-8 text-[15px] font-medium text-[#4C4C58]" id="navLinks" aria-label="Main">
             <Link href="/students" className="hover:text-black transition-colors" onClick={() => setMobileMenuOpen(false)}>
               Students
             </Link>
@@ -72,11 +46,16 @@ export default function Navbar() {
 
           <div className="nav-actions hidden md:flex items-center gap-3">
             <Link
-              className="bg-black hover:bg-[#222222] text-white text-[14px] font-medium px-5 py-2.5 rounded-[10px] transition-all duration-150 active:scale-95 shadow-sm"
-              href="/contact"
-              onClick={() => setMobileMenuOpen(false)}
+              href="/login"
+              className="text-[14px] font-semibold text-[#4C4C58] hover:text-black px-3 py-2 rounded-[10px] transition-colors"
             >
-              Contact Us
+              Log in
+            </Link>
+            <Link
+              className="bg-black hover:bg-[#222222] text-white text-[14px] font-medium px-4.5 py-2.5 rounded-[10px] transition-all duration-150 active:scale-95 shadow-xs"
+              href="/signup"
+            >
+              Sign up
             </Link>
           </div>
 
@@ -112,9 +91,25 @@ export default function Navbar() {
             <Link href="/insights" className="text-base font-medium py-1.5" onClick={() => setMobileMenuOpen(false)}>
               Insights
             </Link>
-            <div className="pt-3 border-t border-gray-100 flex flex-col gap-2">
+            <div className="pt-3 border-t border-gray-100 flex flex-col gap-2.5">
+              <div className="grid grid-cols-2 gap-2">
+                <Link
+                  className="bg-white border border-[#E2DEEA] text-black text-center text-sm font-semibold py-2.5 rounded-[10px]"
+                  href="/login"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Log in
+                </Link>
+                <Link
+                  className="bg-black text-white text-center text-sm font-semibold py-2.5 rounded-[10px]"
+                  href="/signup"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Sign up
+                </Link>
+              </div>
               <Link
-                className="bg-black text-white text-center text-sm font-semibold py-3 rounded-[10px]"
+                className="bg-[#F2EEFD] text-[#4C1D95] text-center text-sm font-semibold py-2.5 rounded-[10px]"
                 href="/contact"
                 onClick={() => setMobileMenuOpen(false)}
               >
