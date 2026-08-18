@@ -8,12 +8,16 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot-grid">
           <div>
-            <div className="logo" style={{ color: "#fff", marginBottom: "1rem" }}>
-              <Logo className="text-[#A879FF]" />
+            <div
+              className="logo"
+              style={{ color: "#fff", marginBottom: "1rem" }}
+            >
+              <Logo className="text-[#713FFF]" />
               <span>SkillReady.ai</span>
             </div>
             <p style={{ maxWidth: "34ch" }}>
-              One place for students, colleges, and companies to get skill-ready and employable.
+              One place for students, colleges, and companies to get skill-ready
+              and employable.
             </p>
             <div className="socials">
               <a href="#" aria-label="YouTube">
@@ -22,10 +26,22 @@ export default function Footer() {
                 </svg>
               </a>
               <a href="#" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
                   <rect x="3" y="3" width="18" height="18" rx="5" />
                   <circle cx="12" cy="12" r="4" />
-                  <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1.2"
+                    fill="currentColor"
+                    stroke="none"
+                  />
                 </svg>
               </a>
               <a href="#" aria-label="LinkedIn">
@@ -38,43 +54,78 @@ export default function Footer() {
           <div>
             <h4>Students</h4>
             <ul>
-              <li><Link href="/students">Learn module</Link></li>
-              <li><Link href="/students">Mock exams</Link></li>
-              <li><Link href="/students">Top recruiters</Link></li>
-              <li><Link href="/students">Jobs &amp; internships</Link></li>
-              <li><Link href="/plans">Plans</Link></li>
+              <li>
+                <Link href="/students">Learn module</Link>
+              </li>
+              <li>
+                <Link href="/students">Mock exams</Link>
+              </li>
+              <li>
+                <Link href="/students">Top recruiters</Link>
+              </li>
+              <li>
+                <Link href="/students">Jobs &amp; internships</Link>
+              </li>
+              <li>
+                <Link href="/plans">Plans</Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4>Colleges</h4>
             <ul>
-              <li><Link href="/colleges">Training programme</Link></li>
-              <li><Link href="/colleges">Monitoring system</Link></li>
-              <li><Link href="/colleges">Batch insights</Link></li>
-              <li><Link href="/contact">Request a walkthrough</Link></li>
+              <li>
+                <Link href="/colleges">Training programme</Link>
+              </li>
+              <li>
+                <Link href="/colleges">Monitoring system</Link>
+              </li>
+              <li>
+                <Link href="/colleges">Batch insights</Link>
+              </li>
+              <li>
+                <Link href="/contact">Request a walkthrough</Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4>Companies</h4>
             <ul>
-              <li><Link href="/companies">Post a role free</Link></li>
-              <li><Link href="/companies">Candidate filters</Link></li>
-              <li><Link href="/companies">Onboarding</Link></li>
+              <li>
+                <Link href="/companies">Post a role free</Link>
+              </li>
+              <li>
+                <Link href="/companies">Candidate filters</Link>
+              </li>
+              <li>
+                <Link href="/companies">Onboarding</Link>
+              </li>
             </ul>
           </div>
           <div>
             <h4>Company</h4>
             <ul>
-              <li><Link href="/#about">About the team</Link></li>
-              <li><Link href="/courses">Courses</Link></li>
-              <li><Link href="/insights">Insights</Link></li>
-              <li><Link href="/contact">Contact</Link></li>
+              <li>
+                <Link href="/#about">About the team</Link>
+              </li>
+              <li>
+                <Link href="/courses">Courses</Link>
+              </li>
+              <li>
+                <Link href="/insights">Insights</Link>
+              </li>
+              <li>
+                <Link href="/contact">Contact</Link>
+              </li>
             </ul>
           </div>
         </div>
         <div className="foot-bottom">
           <span>© 2026 SkillReady.ai. All rights reserved.</span>
-          <span>Training and assessment platform · No placement guarantees · Free for employers</span>
+          <span>
+            Training and assessment platform · No placement guarantees · Free
+            for employers
+          </span>
         </div>
       </div>
     </footer>
