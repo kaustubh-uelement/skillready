@@ -26,7 +26,7 @@ export default function HowItWorksSection() {
       <div className="wrap">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-[760px] mx-auto mb-14 md:mb-18">
-          <div className="inline-flex items-center rounded-[10px] border border-[#D9D9D9] bg-white px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4 shadow-2xs">
+          <div className="inline-flex items-center rounded-full border border-[#D9D9D9] bg-white px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4 shadow-2xs">
             HOW SKILLREADY WORKS
           </div>
 

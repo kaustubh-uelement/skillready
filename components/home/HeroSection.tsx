@@ -26,7 +26,7 @@ export default function HeroSection() {
       <div className="wrap relative z-10 pt-8 sm:pt-12 lg:pt-16">
         <div className="max-w-[540px] flex flex-col items-start gap-5 sm:gap-6">
           {/* Top Pill Badge */}
-          <div className="inline-flex items-center gap-2 rounded-[10px] border border-black/15 bg-white/70 backdrop-blur-sm px-4 py-1.5 text-[13px] font-medium text-black shadow-xs">
+          <div className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-white/70 backdrop-blur-sm px-4 py-1.5 text-[13px] font-medium text-black shadow-xs">
             <span>Welcome Onboard</span>
           </div>
 

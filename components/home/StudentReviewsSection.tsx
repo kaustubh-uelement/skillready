@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 const REVIEWS = [
   {
@@ -51,23 +51,66 @@ const REVIEWS = [
 ];
 
 export default function StudentReviewsSection() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, offsetWidth } = scrollRef.current;
+      const index = Math.round(scrollLeft / (offsetWidth * 0.8));
+      setActiveIdx(Math.min(index, REVIEWS.length - 1));
+    }
+  };
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (el) {
+      el.addEventListener("scroll", handleScroll, { passive: true });
+      return () => el.removeEventListener("scroll", handleScroll);
+    }
+  }, []);
+
   return (
-    <section className="py-20 md:py-28 bg-[#F2EEFD]" id="reviews">
+    <section className="py-20 md:py-28 bg-[#F2EEFD] overflow-hidden" id="reviews">
       <div className="wrap">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-[760px] mx-auto mb-14 md:mb-18">
-          <div className="inline-flex items-center rounded-[10px] border border-[#D9D9D9] bg-white px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4 shadow-2xs">
+        <div className="flex flex-col items-center text-center max-w-[760px] mx-auto mb-12 md:mb-18">
+          <div className="inline-flex items-center rounded-full border border-[#D9D9D9] bg-white px-3.5 py-1 text-[12px] font-semibold tracking-wider text-[#4C4C58] uppercase mb-4 shadow-2xs">
             STUDENT REVIEWS
           </div>
 
-          <h2 className="text-[34px] sm:text-[44px] md:text-[48px] font-bold text-black tracking-tight leading-[1.12]">
+          <h2 className="text-[32px] sm:text-[42px] md:text-[48px] font-bold text-black tracking-tight leading-[1.12]">
             What our students <br />
             are saying
           </h2>
         </div>
 
-        {/* 3 Staggered Columns of Testimonials */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-[1080px] mx-auto">
+        {/* 1. Mobile Horizontal Slider (<md) */}
+        <div
+          ref={scrollRef}
+          className="flex md:hidden gap-5 overflow-x-auto snap-x snap-mandatory no-scrollbar px-4 sm:px-6 -mx-4 sm:-mx-6 pb-4"
+        >
+          {REVIEWS.map((r, idx) => (
+            <div key={`mob-${idx}`} className="w-[82vw] max-w-[300px] flex-none snap-center">
+              <TestimonialCard review={r} />
+            </div>
+          ))}
+        </div>
+
+        {/* Mobile Pagination Dots */}
+        <div className="flex justify-center items-center gap-1.5 mt-4 md:hidden">
+          {REVIEWS.slice(0, 6).map((_, i) => (
+            <span
+              key={i}
+              className={`h-1.5 rounded-full transition-all duration-200 ${
+                activeIdx === i ? "w-5 bg-[#713FFF]" : "w-1.5 bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* 2. Desktop 3 Staggered Columns (md+) */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-[1080px] mx-auto">
           {/* Column 1 */}
           <div className="flex flex-col gap-6">
             {REVIEWS.slice(0, 3).map((r, idx) => (
@@ -76,7 +119,7 @@ export default function StudentReviewsSection() {
           </div>
 
           {/* Column 2 (Offset for visual masonry feel) */}
-          <div className="flex flex-col gap-6 md:translate-y-4">
+          <div className="flex flex-col gap-6 translate-y-4">
             {REVIEWS.slice(3, 6).map((r, idx) => (
               <TestimonialCard key={`c2-${idx}`} review={r} />
             ))}
@@ -96,7 +139,7 @@ export default function StudentReviewsSection() {
 
 function TestimonialCard({ review }: { review: { quote: string; author: string } }) {
   return (
-    <div className="bg-white rounded-[10px] border border-[#E8E4F0] p-6 sm:p-7 shadow-xs hover:shadow-md transition-all flex flex-col gap-4">
+    <div className="bg-white rounded-[10px] border border-[#E8E4F0] p-6 sm:p-7 shadow-xs hover:shadow-md transition-all flex flex-col justify-between h-full gap-4">
       {/* Top: Avatar & 5 Stars */}
       <div className="flex items-center gap-3">
         <div className="w-10 h-10 rounded-full bg-[#E5E7EB] flex items-center justify-center text-gray-500 font-bold text-sm flex-none">
@@ -119,7 +162,7 @@ function TestimonialCard({ review }: { review: { quote: string; author: string }
       </p>
 
       {/* Author Username */}
-      <div className="pt-2 border-t border-gray-100">
+      <div className="pt-3 border-t border-gray-100">
         <h4 className="text-[14px] font-bold text-black">{review.author}</h4>
       </div>
     </div>
