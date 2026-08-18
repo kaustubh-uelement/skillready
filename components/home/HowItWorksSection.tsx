@@ -22,7 +22,7 @@ const STEPS_DATA = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="py-20 md:py-28 bg-[#FAFAFC]">
+    <section className="py-20 md:py-28 bg-[#F2EEFD]">
       <div className="wrap">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center max-w-[760px] mx-auto mb-14 md:mb-18">
@@ -36,7 +36,8 @@ export default function HowItWorksSection() {
           </h2>
 
           <p className="text-[16px] sm:text-[18px] text-[#4C4C58] leading-relaxed max-w-[620px]">
-            Students receive structured guidance that helps them understand exactly how to become job ready.
+            Students receive structured guidance that helps them understand
+            exactly how to become job ready.
           </p>
         </div>
 
@@ -61,7 +62,9 @@ export default function HowItWorksSection() {
                     <React.Fragment key={idx}>
                       <span>{step}</span>
                       {idx < row.flow.length - 1 && (
-                        <span className="text-[#713FFF] font-normal text-lg">→</span>
+                        <span className="text-[#713FFF] font-normal text-lg">
+                          →
+                        </span>
                       )}
                     </React.Fragment>
                   ))}
