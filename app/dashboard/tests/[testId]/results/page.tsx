@@ -106,10 +106,10 @@ export default function TestResultPage({
         {/* Rank & Percentile */}
         <div className="bg-white p-5 rounded-[12px] border border-[#E8E4F0] shadow-xs">
           <div className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#7A7A88] mb-2">
-            Est. All-India Rank
+            Est. National SWE Rank
           </div>
           <div className="text-[36px] font-bold text-black leading-none font-display">
-            AIR {result.predictedAIR}
+            Rank {result.predictedAIR}
           </div>
           <div className="font-mono text-[11px] text-[#713FFF] font-bold mt-2">
             {result.percentile}th Percentile

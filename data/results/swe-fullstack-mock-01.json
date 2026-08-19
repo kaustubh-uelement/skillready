@@ -1,0 +1,161 @@
+{
+  "testId": "swe-fullstack-mock-01",
+  "testTitle": "Full Stack Software Engineering Assessment 01",
+  "branch": "Python, TypeScript, React & System Architecture",
+  "submittedAt": "2026-08-18T14:45:00.000Z",
+  "timeTakenSeconds": 7850,
+  "totalAllottedSeconds": 10800,
+  "totalMarks": 100,
+  "scoreObtained": 78.5,
+  "percentage": 78.5,
+  "accuracy": 83.3,
+  "percentile": 99.4,
+  "predictedAIR": 42,
+  "counts": {
+    "total": 12,
+    "answered": 11,
+    "correct": 10,
+    "incorrect": 1,
+    "unattempted": 1,
+    "markedForReview": 2,
+    "negativeMarks": 0.66
+  },
+  "sectionScores": [
+    {
+      "sectionId": "CORE",
+      "sectionName": "SDE Core Fundamentals",
+      "totalMarks": 20,
+      "scoreObtained": 18.0,
+      "correct": 4,
+      "incorrect": 0,
+      "unattempted": 0
+    },
+    {
+      "sectionId": "ARCH",
+      "sectionName": "Full Stack Systems & DBs",
+      "totalMarks": 80,
+      "scoreObtained": 60.5,
+      "correct": 6,
+      "incorrect": 1,
+      "unattempted": 1
+    }
+  ],
+  "responses": {
+    "1": {
+      "questionId": 1,
+      "type": "MCQ",
+      "selectedOption": "B",
+      "status": "answered",
+      "isCorrect": true,
+      "marksAwarded": 1,
+      "timeSpentSeconds": 140
+    },
+    "2": {
+      "questionId": 2,
+      "type": "MCQ",
+      "selectedOption": "C",
+      "status": "answered",
+      "isCorrect": true,
+      "marksAwarded": 1,
+      "timeSpentSeconds": 180
+    },
+    "3": {
+      "questionId": 3,
+      "type": "MSQ",
+      "selectedOptions": ["A", "B", "D"],
+      "status": "answered_marked_for_review",
+      "isCorrect": true,
+      "marksAwarded": 2,
+      "timeSpentSeconds": 240
+    },
+    "4": {
+      "questionId": 4,
+      "type": "NAT",
+      "numericAnswer": "1",
+      "status": "answered",
+      "isCorrect": true,
+      "marksAwarded": 2,
+      "timeSpentSeconds": 310
+    },
+    "5": {
+      "questionId": 5,
+      "type": "MCQ",
+      "selectedOption": "C",
+      "status": "answered",
+      "isCorrect": true,
+      "marksAwarded": 2,
+      "timeSpentSeconds": 120
+    },
+    "6": {
+      "questionId": 6,
+      "type": "MSQ",
+      "selectedOptions": ["A", "B"],
+      "status": "answered",
+      "isCorrect": true,
+      "marksAwarded": 2,
+      "timeSpentSeconds": 210
+    },
+    "7": {
+      "questionId": 7,
+      "type": "MCQ",
+      "selectedOption": "B",
+      "status": "answered",
+      "isCorrect": true,
+      "marksAwarded": 2,
+      "timeSpentSeconds": 290
+    },
+    "8": {
+      "questionId": 8,
+      "type": "NAT",
+      "numericAnswer": "96",
+      "status": "answered",
+      "isCorrect": true,
+      "marksAwarded": 2,
+      "timeSpentSeconds": 360
+    },
+    "9": {
+      "questionId": 9,
+      "type": "MCQ",
+      "selectedOption": "A",
+      "status": "answered",
+      "isCorrect": false,
+      "marksAwarded": -0.66,
+      "timeSpentSeconds": 250
+    },
+    "10": {
+      "questionId": 10,
+      "type": "MSQ",
+      "selectedOptions": ["A", "B", "D"],
+      "status": "answered",
+      "isCorrect": true,
+      "marksAwarded": 2,
+      "timeSpentSeconds": 190
+    },
+    "11": {
+      "questionId": 11,
+      "type": "NAT",
+      "numericAnswer": "409",
+      "status": "answered",
+      "isCorrect": true,
+      "marksAwarded": 2,
+      "timeSpentSeconds": 150
+    },
+    "12": {
+      "questionId": 12,
+      "type": "MCQ",
+      "selectedOption": "",
+      "status": "not_answered",
+      "isCorrect": false,
+      "marksAwarded": 0,
+      "timeSpentSeconds": 90
+    }
+  },
+  "violations": [
+    {
+      "id": "v-1",
+      "timestamp": "2026-08-18T13:12:40.000Z",
+      "type": "tab_switch",
+      "message": "Tab switched to external window (Warning 1/3)"
+    }
+  ]
+}

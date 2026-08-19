@@ -274,7 +274,7 @@ export function GateCalculator({ isOpen, onClose }: GateCalculatorProps) {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={() => alert("GATE Scientific Calculator: Supports real arithmetic, trig, hyperbolic, log, and memory functions.")}
+            onClick={() => alert("SkillReady Scientific & Engineering Calculator: Supports real arithmetic, trig, hyperbolic, log, and memory functions.")}
             className="text-[11px] underline hover:text-white/80 cursor-pointer"
           >
             Help

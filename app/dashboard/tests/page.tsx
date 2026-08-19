@@ -35,17 +35,17 @@ export default function TestSeriesDashboardPage() {
       <div className="pb-6 border-b border-[#E8E4F0] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <h1 className="text-[28px] sm:text-[34px] font-normal text-black font-display tracking-tight leading-none">
-            GATE <em className="italic font-bold text-[#713FFF]">Mock Test Series</em>
+            SWE <em className="italic font-bold text-[#713FFF]">Mock Test Series</em>
           </h1>
           <div className="font-mono text-[11px] text-[#7A7A88] uppercase tracking-widest mt-2">
-            All-India Rank Benchmarking & Official CBT Exam Simulation
+            National SDE Rank Benchmarking & Proctored SWE Technical Assessments
           </div>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#F2EEFD] text-[#713FFF] border border-[#713FFF]/20">
             <span className="w-2 h-2 rounded-full bg-[#713FFF] animate-pulse" />
-            GATE 2027 Pattern
+            SkillReady SDE Pattern
           </span>
         </div>
       </div>
@@ -60,7 +60,7 @@ export default function TestSeriesDashboardPage() {
             {totalTests}
           </div>
           <div className="font-mono text-[11px] text-[#7A7A88] mt-2">
-            CS & DA Full Lengths
+            Full Stack, Systems & Cloud
           </div>
         </div>
 
@@ -93,10 +93,10 @@ export default function TestSeriesDashboardPage() {
             Est. Percentile
           </div>
           <div className="text-[34px] font-bold text-black leading-none font-display">
-            {bestScore > 0 ? "99.14%" : "—"}
+            {bestScore > 0 ? "99.4%" : "—"}
           </div>
           <div className="font-mono text-[11px] text-[#7A7A88] mt-2 truncate">
-            Top 0.8% Nationwide
+            Top 1% SWE Nationwide
           </div>
         </div>
       </div>
@@ -105,7 +105,7 @@ export default function TestSeriesDashboardPage() {
       <div className="space-y-4">
         <div className="flex items-center justify-between">
           <h2 className="text-[18px] font-bold text-black font-display">
-            Available Mock Exams
+            Available SDE Technical Assessments
           </h2>
           <span className="font-mono text-[11px] text-[#7A7A88]">
             3-Hour Timed Proctored Sessions
@@ -145,7 +145,7 @@ export default function TestSeriesDashboardPage() {
                   </h3>
 
                   <div className="font-mono text-[11px] text-[#7A7A88] mb-4">
-                    Branch: <span className="text-black font-medium">{test.branch}</span>
+                    Track: <span className="text-black font-medium">{test.branch}</span>
                   </div>
 
                   {/* Metadata Specs */}
@@ -167,7 +167,7 @@ export default function TestSeriesDashboardPage() {
                   {/* Syllabus tags */}
                   <div className="space-y-1.5 mb-5">
                     <div className="font-mono text-[10px] uppercase font-bold text-[#7A7A88]">
-                      Sections Included
+                      Assessment Modules
                     </div>
                     <div className="flex flex-wrap gap-1.5">
                       {test.sections.map((sec) => (
@@ -215,7 +215,7 @@ export default function TestSeriesDashboardPage() {
                       onClick={() => handleLaunchTest(test)}
                       className="w-full font-mono text-[11px] font-bold uppercase tracking-wider py-2.5 border border-[#713FFF] bg-[#713FFF] text-white hover:bg-[#602ee6] rounded-[6px] transition-all shadow-xs cursor-pointer text-center"
                     >
-                      ▶ Start Proctored Mock Test
+                      ▶ Start Proctored Assessment
                     </button>
                   )}
                 </div>
@@ -233,7 +233,7 @@ export default function TestSeriesDashboardPage() {
             <div className="px-6 py-4 border-b border-[#E8E4F0] flex items-center justify-between bg-[#FBF9FF]">
               <div>
                 <span className="font-mono text-[10px] font-bold uppercase tracking-widest text-[#713FFF]">
-                  Official CBT Instructions
+                  Official SWE Assessment Guidelines
                 </span>
                 <h3 className="text-[18px] font-bold text-black font-display">
                   {selectedTestForInstructions.title}
@@ -251,23 +251,23 @@ export default function TestSeriesDashboardPage() {
             {/* Body */}
             <div className="p-6 overflow-y-auto space-y-4 text-[13px] text-[#4C4C58] leading-relaxed">
               <div className="p-3 bg-[#F2EEFD] border border-[#713FFF]/20 rounded-[8px] text-[#713FFF] font-medium">
-                ⚡ <strong>Important:</strong> This test will open in full-screen GATE CBT Mode. Full proctoring telemetry (tab switches, fullscreen exits, mouse focus) will be strictly recorded.
+                ⚡ <strong>Important:</strong> This assessment opens in full-screen proctored environment. Anti-cheat telemetry (tab switches, fullscreen exits, window focus) is strictly monitored.
               </div>
 
               <div>
                 <h4 className="font-bold text-black font-display text-[15px] mb-1">
-                  1. General Examination Guidelines
+                  1. Assessment Structure & Timing
                 </h4>
                 <ul className="list-disc pl-5 space-y-1">
-                  <li>Total duration of examination is <strong>{selectedTestForInstructions.durationMinutes} minutes</strong> (180 min).</li>
-                  <li>The clock will be set at the server. The countdown timer at the top right corner shows the time remaining.</li>
-                  <li>When the timer reaches zero, the examination will automatically submit.</li>
+                  <li>Total duration is <strong>{selectedTestForInstructions.durationMinutes} minutes</strong>.</li>
+                  <li>The countdown timer at the top right indicates remaining time.</li>
+                  <li>When the countdown timer reaches zero, your answers will be automatically submitted for final scoring.</li>
                 </ul>
               </div>
 
               <div>
                 <h4 className="font-bold text-black font-display text-[15px] mb-1">
-                  2. Question Palette Legend
+                  2. Question Status Colors
                 </h4>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[12px] font-mono">
                   <div className="flex items-center gap-2 p-1.5 rounded bg-[#FBF9FF] border border-[#E8E4F0]">
@@ -291,22 +291,13 @@ export default function TestSeriesDashboardPage() {
 
               <div>
                 <h4 className="font-bold text-black font-display text-[15px] mb-1">
-                  3. Marking Scheme & Negative Marks
+                  3. Question Formats & Scoring
                 </h4>
                 <ul className="list-disc pl-5 space-y-1">
-                  <li><strong>1-mark MCQ:</strong> +1 for correct, <strong>-0.33 (1/3)</strong> for incorrect.</li>
-                  <li><strong>2-mark MCQ:</strong> +2 for correct, <strong>-0.66 (2/3)</strong> for incorrect.</li>
-                  <li><strong>MSQ & NAT:</strong> No negative marking. MSQ requires all correct options with zero incorrect options for credit.</li>
+                  <li><strong>Multiple Choice (MCQ):</strong> 1 or 2 marks with standard negative marking (-0.33 / -0.66).</li>
+                  <li><strong>Multiple Select (MSQ):</strong> Multi-correct choices without negative marks.</li>
+                  <li><strong>Numerical Answer (NAT):</strong> Enter precise integer/decimal values without negative marks.</li>
                 </ul>
-              </div>
-
-              <div>
-                <h4 className="font-bold text-black font-display text-[15px] mb-1">
-                  4. Virtual Scientific Calculator
-                </h4>
-                <p>
-                  A real draggable GATE virtual scientific calculator is available at the top right during the test. Physical calculators are strictly not permitted.
-                </p>
               </div>
 
               <div className="pt-3 border-t border-[#E8E4F0]">
@@ -318,7 +309,7 @@ export default function TestSeriesDashboardPage() {
                     className="mt-1 w-4 h-4 accent-[#713FFF] cursor-pointer"
                   />
                   <span className="text-[12px] text-black font-medium">
-                    I have read and understood all instructions. I declare that I am using a stable browser and agree to full proctored session monitoring.
+                    I have read and agree to all assessment guidelines. I confirm that I will take this technical evaluation independently in full-screen proctored mode.
                   </span>
                 </label>
               </div>

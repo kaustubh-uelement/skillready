@@ -15,29 +15,33 @@ export function GateHeader({
   onOpenInstructions,
 }: GateHeaderProps) {
   return (
-    <header className="w-full select-none">
-      {/* ── Top White Official Banner ───────────────────────────────── */}
+    <header className="w-full select-none font-sans">
+      {/* ── Top SkillReady Official Banner ──────────────────────────── */}
       <div className="bg-white border-b border-[#e0e0e0] px-4 py-2 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          {/* IIT Emblem Placeholder */}
-          <div className="w-10 h-10 rounded-full border border-[#8b0000] bg-[#fff5f5] text-[#8b0000] flex items-center justify-center font-serif font-bold text-xs shadow-2xs">
-            IITM
+          {/* SkillReady Emblem */}
+          <div className="w-9 h-9 rounded-[8px] bg-[#713FFF] text-white flex items-center justify-center font-display font-bold text-sm shadow-xs tracking-tight">
+            SR
           </div>
           <div>
-            <h1 className="text-[14px] sm:text-[16px] font-bold text-[#8b0000] uppercase tracking-tight font-serif leading-tight">
-              GRADUATE APTITUDE TEST IN ENGINEERING (GATE 2027)
+            <h1 className="text-[14px] sm:text-[16px] font-bold text-[#1E1238] uppercase tracking-tight font-display leading-tight flex items-center gap-2">
+              <span>SKILLREADY SOFTWARE ENGINEERING ASSESSMENT</span>
+              <span className="hidden md:inline text-[10px] px-2 py-0.5 rounded bg-[#F2EEFD] text-[#713FFF] font-mono font-bold">
+                SWE-CBT PROCTORED
+              </span>
             </h1>
-            <p className="text-[10px] sm:text-[11px] text-[#555] font-sans">
-              Organizing Institute: INDIAN INSTITUTE OF TECHNOLOGY MADRAS · SkillReady CBT Portal
+            <p className="text-[10px] sm:text-[11px] text-[#7A7A88] font-sans">
+              SkillReady Certified Developer Program · Industry Placement & Coding Competency Benchmark
             </p>
           </div>
         </div>
 
-        {/* Right Portal Emblem */}
-        <div className="hidden sm:flex items-center gap-2">
-          <div className="w-9 h-9 rounded-[6px] bg-[#713FFF] text-white flex items-center justify-center font-bold text-xs shadow-2xs font-mono">
-            SR
-          </div>
+        {/* Right Status Badge */}
+        <div className="flex items-center gap-2">
+          <span className="hidden sm:inline-flex items-center gap-1 px-2.5 py-1 rounded bg-[#F4F2FA] text-[#713FFF] text-[11px] font-mono font-bold border border-[#713FFF]/20">
+            <span className="w-2 h-2 rounded-full bg-[#713FFF] animate-pulse" />
+            Live Assessment Mode
+          </span>
         </div>
       </div>
 

@@ -1,8 +1,8 @@
 import testsMeta from "@/data/tests.json";
-import mock01Questions from "@/data/questions/gate-cs-mock-01.json";
-import mock02Questions from "@/data/questions/gate-cs-mock-02.json";
-import mockDa01Questions from "@/data/questions/gate-da-mock-01.json";
-import mock01Result from "@/data/results/gate-cs-mock-01.json";
+import fullstackQuestions from "@/data/questions/swe-fullstack-mock-01.json";
+import dsaQuestions from "@/data/questions/swe-dsa-systems-mock-01.json";
+import devopsQuestions from "@/data/questions/swe-devops-cloud-mock-01.json";
+import fullstackResult from "@/data/results/swe-fullstack-mock-01.json";
 import {
   TestMeta,
   Question,
@@ -12,9 +12,9 @@ import {
 } from "@/types/exam";
 
 const STORAGE_KEYS = {
-  TESTS_META: "skillready_gate_tests_meta",
-  USER_ATTEMPTS: "skillready_gate_attempts_",
-  USER_RESULTS: "skillready_gate_results_",
+  TESTS_META: "skillready_swe_tests_meta",
+  USER_ATTEMPTS: "skillready_swe_attempts_",
+  USER_RESULTS: "skillready_swe_results_",
 };
 
 export function getAllTests(): TestMeta[] {
@@ -41,14 +41,17 @@ export function getTestById(testId: string): TestMeta | undefined {
 
 export function getQuestionsForTest(testId: string): Question[] {
   switch (testId) {
+    case "swe-fullstack-mock-01":
     case "gate-cs-mock-01":
-      return mock01Questions as Question[];
+      return fullstackQuestions as Question[];
+    case "swe-dsa-systems-mock-01":
     case "gate-cs-mock-02":
-      return mock02Questions as Question[];
+      return dsaQuestions as Question[];
+    case "swe-devops-cloud-mock-01":
     case "gate-da-mock-01":
-      return mockDa01Questions as Question[];
+      return devopsQuestions as Question[];
     default:
-      return mock01Questions as Question[];
+      return fullstackQuestions as Question[];
   }
 }
 
@@ -64,8 +67,8 @@ export function getSavedResult(testId: string): ExamResult | null {
     }
   }
 
-  if (testId === "gate-cs-mock-01") {
-    return mock01Result as ExamResult;
+  if (testId === "swe-fullstack-mock-01" || testId === "gate-cs-mock-01") {
+    return fullstackResult as ExamResult;
   }
 
   return null;
@@ -196,12 +199,12 @@ export function evaluateAndSaveExam(
   const accuracy =
     answeredCount > 0 ? Math.round((correctCount / answeredCount) * 1000) / 10 : 0;
 
-  // Predictive AIR & Percentile estimation curve
+  // Predictive SDE AIR & Percentile estimation curve
   const percentile = Math.min(
     99.9,
     Math.max(40, Math.round((finalScore / test.totalMarks) * 60 + 39.5 * 100) / 100)
   );
-  const predictedAIR = Math.max(1, Math.round(15000 * (1 - percentile / 100)));
+  const predictedAIR = Math.max(1, Math.round(5000 * (1 - percentile / 100)));
 
   const result: ExamResult = {
     testId,
