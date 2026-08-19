@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "testId": "gate-da-mock-01",
+    "sectionId": "GA",
+    "sectionName": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "Verbal Ability",
+    "questionText": "Fill in the blank with the most appropriate word:\n\n'The research team was able to _______ significant findings from the multi-terabyte genome sequence data.'",
+    "options": [
+      { "id": "A", "text": "elicit" },
+      { "id": "B", "text": "illicit" },
+      { "id": "C", "text": "allude" },
+      { "id": "D", "text": "elude" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Elicit means to evoke, draw out, or deduce. Illicit means illegal."
+  },
+  {
+    "id": 2,
+    "testId": "gate-da-mock-01",
+    "sectionId": "DA",
+    "sectionName": "Data Science & AI",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "Linear Algebra",
+    "questionText": "What are the eigenvalues of the matrix A = [[2, 1], [1, 2]]?",
+    "options": [
+      { "id": "A", "text": "λ₁ = 3, λ₂ = 1" },
+      { "id": "B", "text": "λ₁ = 4, λ₂ = 0" },
+      { "id": "C", "text": "λ₁ = 2, λ₂ = 2" },
+      { "id": "D", "text": "λ₁ = 5, λ₂ = -1" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "det(A - λI) = (2 - λ)^2 - 1 = λ^2 - 4λ + 3 = (λ - 3)(λ - 1) = 0. Thus eigenvalues are 3 and 1."
+  },
+  {
+    "id": 3,
+    "testId": "gate-da-mock-01",
+    "sectionId": "DA",
+    "sectionName": "Data Science & AI",
+    "type": "MSQ",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Machine Learning",
+    "questionText": "Which of the following statements about Support Vector Machines (SVM) and Kernel methods are TRUE?",
+    "options": [
+      { "id": "A", "text": "The decision boundary in a soft-margin SVM depends only on the support vectors." },
+      { "id": "B", "text": "The Radial Basis Function (RBF) kernel implicitly maps data points into an infinite-dimensional feature space." },
+      { "id": "C", "text": "SVMs are prone to the curse of dimensionality and cannot handle high-dimensional text data." },
+      { "id": "D", "text": "The optimization problem for training a hard-margin SVM is convex with a unique global optimum." }
+    ],
+    "correctAnswer": ["A", "B", "D"],
+    "explanation": "SVM decision boundary depends solely on support vectors. RBF kernel maps to infinite Hilbert space. SVM optimization is quadratic programming (convex). SVMs perform very well in high-dimensional spaces."
+  },
+  {
+    "id": 4,
+    "testId": "gate-da-mock-01",
+    "sectionId": "DA",
+    "sectionName": "Data Science & AI",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Probability & Statistics",
+    "questionText": "Let X be a continuous random variable uniformly distributed over the interval [2, 10]. What is the variance Var(X)? (Round to 2 decimal places).",
+    "correctAnswer": { "min": 5.33, "max": 5.34 },
+    "explanation": "For uniform distribution U(a, b), Var(X) = (b - a)^2 / 12 = (10 - 2)^2 / 12 = 64 / 12 = 5.3333..."
+  }
+]

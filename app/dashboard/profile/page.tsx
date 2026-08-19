@@ -11,11 +11,11 @@ export default function ProfilePage() {
     name: session?.user?.name || "John Doe",
     email: session?.user?.email || "john.doe@skillready.ai",
     initials: (session?.user as any)?.initials || "JD",
-    role: (session?.user as any)?.role || "L1 Learner — Quantum + PQC",
+    role: (session?.user as any)?.role || "L1 Learner — Full Stack & SDE Track",
     org: (session?.user as any)?.org || "Apex Technologies Pvt Ltd",
     cohort: (session?.user as any)?.cohort || "Cohort Alpha — Batch 2026",
     memberSince: (session?.user as any)?.memberSince || "Mar 2026",
-    credentialId: (session?.user as any)?.credentialId || "SKILL-IISA-26-0847",
+    credentialId: (session?.user as any)?.credentialId || "SKILL-SDSE-26-0847",
   };
 
   return (
@@ -97,7 +97,7 @@ export default function ProfilePage() {
                 Enrolled Tracks
               </span>
               <span className="sm:col-span-2 text-black font-medium">
-                Track 01 (L1) · Track 04 (L1 ✓) · Track 05 (L1)
+                Track 01 (Full Stack Python · L1) · Track 02 (Next.js & TypeScript · L1) · Track 03 (DSA & System Design · L1 ✓)
               </span>
             </div>
 

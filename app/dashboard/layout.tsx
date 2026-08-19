@@ -19,7 +19,7 @@ export default function DashboardLayout({
   const currentUser = {
     name: session?.user?.name || "John Doe",
     initials: (session?.user as any)?.initials || "JD",
-    role: (session?.user as any)?.role || "L1 Learner — Quantum + PQC",
+    role: (session?.user as any)?.role || "L1 Learner — Full Stack & SDE Track",
   };
 
   const navItems = [
@@ -52,6 +52,16 @@ export default function DashboardLayout({
         <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4">
           <rect x="2" y="2" width="12" height="12" />
           <polygon points="6,5 12,8 6,11" fill="currentColor" stroke="none" />
+        </svg>
+      ),
+    },
+    {
+      label: "Test Series",
+      href: "/dashboard/tests",
+      icon: (
+        <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4">
+          <path d="M3 2h10a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" />
+          <path d="M5 6h6M5 9h4M5 12h2" />
         </svg>
       ),
     },
