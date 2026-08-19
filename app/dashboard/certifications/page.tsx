@@ -9,14 +9,14 @@ export default function CertificationsPage() {
   const [downloading, setDownloading] = useState(false);
 
   const currentUser = {
-    credentialId: (session?.user as any)?.credentialId || "SKILL-IISA-26-0847",
+    credentialId: (session?.user as any)?.credentialId || "SKILL-SDSE-26-0847",
   };
 
   const handleDownload = () => {
     setDownloading(true);
     setTimeout(() => {
       setDownloading(false);
-      alert("Certificate PDF downloaded: SKILL-IISA-26-0847.pdf");
+      alert(`Certificate PDF downloaded: ${currentUser.credentialId}.pdf`);
     }, 1200);
   };
 
@@ -48,10 +48,10 @@ export default function CertificationsPage() {
               SR
             </div>
             <h3 className="text-[20px] font-bold text-black font-display">
-              ICS/OT Security Architect
+              DSA & Problem Solving Engineer
             </h3>
             <div className="font-mono text-[11px] text-[#7A7A88] uppercase tracking-wider mt-1">
-              SISA · LEVEL 1 · TRACK 04
+              SDSE · LEVEL 1 · TRACK 03
             </div>
             <div className="font-mono text-[10px] text-[#7A7A88] mt-3">
               Earned 12 Jun 2026 · Credential ID {currentUser.credentialId}
@@ -66,10 +66,10 @@ export default function CertificationsPage() {
               —
             </div>
             <h3 className="text-[20px] font-bold text-black font-display">
-              Applied Quantum Developer
+              Full Stack Python Developer
             </h3>
             <div className="font-mono text-[11px] text-[#7A7A88] uppercase tracking-wider mt-1">
-              SAQD · LEVEL 1 · TRACK 01
+              SFPD · LEVEL 1 · TRACK 01
             </div>
             <div className="font-mono text-[10px] text-[#7A7A88] mt-3">
               In progress — 64% · Capstone pending
@@ -84,10 +84,10 @@ export default function CertificationsPage() {
               —
             </div>
             <h3 className="text-[20px] font-bold text-black font-display">
-              Applied PQC Specialist
+              Next.js & Frontend Architect
             </h3>
             <div className="font-mono text-[11px] text-[#7A7A88] uppercase tracking-wider mt-1">
-              SAPS · LEVEL 1 · TRACK 05
+              SNXA · LEVEL 1 · TRACK 02
             </div>
             <div className="font-mono text-[10px] text-[#7A7A88] mt-3">
               In progress — 31% · 3 modules remaining
@@ -102,13 +102,13 @@ export default function CertificationsPage() {
               —
             </div>
             <h3 className="text-[20px] font-bold text-black font-display">
-              Edge AI Architect
+              Cloud DevOps Engineer
             </h3>
             <div className="font-mono text-[11px] text-[#7A7A88] uppercase tracking-wider mt-1">
-              SEAA · LEVEL 1 · TRACK 02
+              SCDE · LEVEL 1 · TRACK 05
             </div>
             <div className="font-mono text-[10px] text-[#7A7A88] mt-3">
-              Locked — activate Track 02 to begin
+              Locked — activate Track 05 to begin
             </div>
           </div>
         </div>

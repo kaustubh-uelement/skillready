@@ -19,7 +19,7 @@ export default function DashboardLayout({
   const currentUser = {
     name: session?.user?.name || "John Doe",
     initials: (session?.user as any)?.initials || "JD",
-    role: (session?.user as any)?.role || "L1 Learner — Quantum + PQC",
+    role: (session?.user as any)?.role || "L1 Learner — Full Stack & SDE Track",
   };
 
   const navItems = [

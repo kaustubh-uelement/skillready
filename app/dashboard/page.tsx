@@ -13,53 +13,56 @@ import {
 
 function TrackIcon({ type }: { type: TrackData["icon"] }) {
   switch (type) {
-    case "quantum":
+    case "python":
+      return (
+        <svg className="w-5 h-5 text-[#713FFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M12 2C8.5 2 6 3.5 6 5.5V8h6v2H4.5C2.5 10 2 12.5 2 15s1.5 5 4 5h2v-2.5c0-1.5 1-2.5 2.5-2.5h6c1.5 0 2.5-1 2.5-2.5V8c0-3.5-2.5-6-7-6z" />
+          <circle cx="8" cy="5" r="1" fill="currentColor" />
+          <circle cx="16" cy="19" r="1" fill="currentColor" />
+        </svg>
+      );
+    case "react":
       return (
         <svg className="w-5 h-5 text-[#713FFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
           <ellipse cx="12" cy="12" rx="9" ry="4" />
           <ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(60 12 12)" />
           <ellipse cx="12" cy="12" rx="9" ry="4" transform="rotate(120 12 12)" />
-          <circle cx="12" cy="12" r="2" fill="currentColor" />
+          <circle cx="12" cy="12" r="1.5" fill="currentColor" />
+        </svg>
+      );
+    case "dsa":
+      return (
+        <svg className="w-5 h-5 text-[#713FFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+          <circle cx="12" cy="4" r="2" />
+          <circle cx="6" cy="12" r="2" />
+          <circle cx="18" cy="12" r="2" />
+          <circle cx="6" cy="20" r="2" />
+          <circle cx="18" cy="20" r="2" />
+          <path d="M12 6v4m0 0L6 10m6 0l6 0M6 14v4M18 14v4" />
+        </svg>
+      );
+    case "backend":
+      return (
+        <svg className="w-5 h-5 text-[#713FFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+          <rect x="2" y="3" width="20" height="6" rx="2" />
+          <rect x="2" y="11" width="20" height="6" rx="2" />
+          <rect x="2" y="19" width="20" height="6" rx="2" />
+          <circle cx="6" cy="6" r="1" fill="currentColor" />
+          <circle cx="6" cy="14" r="1" fill="currentColor" />
+          <circle cx="6" cy="22" r="1" fill="currentColor" />
+        </svg>
+      );
+    case "devops":
+      return (
+        <svg className="w-5 h-5 text-[#713FFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+          <path d="M4 17l6-6-6-6m8 14h8" />
         </svg>
       );
     case "ai":
       return (
         <svg className="w-5 h-5 text-[#713FFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <rect x="4" y="14" width="3" height="7" rx="1" />
-          <rect x="9" y="10" width="3" height="11" rx="1" />
-          <rect x="14" y="6" width="3" height="15" rx="1" />
-        </svg>
-      );
-    case "robot":
-      return (
-        <svg className="w-5 h-5 text-[#713FFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <rect x="7" y="14" width="10" height="7" rx="1" />
-          <rect x="6" y="11" width="12" height="3" rx="1" />
-          <circle cx="12" cy="8" r="3" />
-        </svg>
-      );
-    case "security":
-      return (
-        <svg className="w-5 h-5 text-[#713FFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <rect x="5" y="10" width="14" height="11" rx="2" />
-          <path d="M8 10V7a4 4 0 018 0v3" />
-        </svg>
-      );
-    case "pqc":
-      return (
-        <svg className="w-5 h-5 text-[#713FFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <rect x="4" y="4" width="6" height="6" rx="1" />
-          <rect x="14" y="4" width="6" height="6" rx="1" />
-          <rect x="4" y="14" width="6" height="6" rx="1" />
-          <rect x="14" y="14" width="6" height="6" rx="1" />
-        </svg>
-      );
-    case "fde":
-      return (
-        <svg className="w-5 h-5 text-[#713FFF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <circle cx="6" cy="12" r="3" />
-          <circle cx="18" cy="6" r="3" />
-          <circle cx="18" cy="18" r="3" />
+          <path d="M12 2v4m0 12v4M2 12h4m12 0h4m-3.5-6.5l-2.8 2.8m-7.4 7.4l-2.8 2.8m0-13l2.8 2.8m7.4 7.4l2.8 2.8" />
+          <circle cx="12" cy="12" r="3" />
         </svg>
       );
     default:
@@ -159,7 +162,7 @@ export default function DashboardOverviewPage() {
             {completedCourses.length}
           </div>
           <div className="font-mono text-[11px] text-[#7A7A88] mt-2">
-            IISA · Jun 2026
+            SDSE · Jun 2026
           </div>
         </div>
 
