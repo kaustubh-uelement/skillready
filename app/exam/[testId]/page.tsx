@@ -85,7 +85,7 @@ export default function ExamPage({
       <div className="min-h-screen bg-[#24272c] text-white flex items-center justify-center font-mono">
         <div className="text-center space-y-3">
           <div className="w-8 h-8 border-3 border-t-[#713FFF] border-white/20 rounded-full animate-spin mx-auto" />
-          <div>Initializing GATE CBT Environment...</div>
+          <div>Initializing SkillReady SWE Assessment Environment...</div>
         </div>
       </div>
     );

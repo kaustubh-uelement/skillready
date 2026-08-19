@@ -1,0 +1,212 @@
+[
+  {
+    "id": 1,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "CORE",
+    "sectionName": "SDE Core Fundamentals",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "JavaScript Event Loop",
+    "questionText": "Consider the following JavaScript code snippet executed in Node.js / V8:\n\n```js\nconsole.log('1');\nsetTimeout(() => console.log('2'), 0);\nPromise.resolve().then(() => console.log('3'));\nprocess.nextTick(() => console.log('4'));\nconsole.log('5');\n```\n\nWhat is the exact logged sequence of output?",
+    "options": [
+      { "id": "A", "text": "1, 5, 2, 3, 4" },
+      { "id": "B", "text": "1, 5, 4, 3, 2" },
+      { "id": "C", "text": "1, 3, 4, 5, 2" },
+      { "id": "D", "text": "1, 5, 3, 4, 2" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Synchronous code executes first (1, 5). Next, microtasks queued via `process.nextTick()` execute before the standard microtask promise queue (4, 3). Finally, the macrotask macrotick `setTimeout` callback executes in the next event loop phase (2). Output: 1, 5, 4, 3, 2."
+  },
+  {
+    "id": 2,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "CORE",
+    "sectionName": "SDE Core Fundamentals",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "Python Concurrency & GIL",
+    "questionText": "In CPython 3.12, which of the following mechanisms is best suited for achieving true CPU parallelism across multiple physical cores without being constrained by the Global Interpreter Lock (GIL)?",
+    "options": [
+      { "id": "A", "text": "Standard `threading.Thread` with IO polling" },
+      { "id": "B", "text": "Asynchronous event loop with `asyncio.gather()`" },
+      { "id": "C", "text": "`multiprocessing.Process` or `concurrent.futures.ProcessPoolExecutor`" },
+      { "id": "D", "text": "Generator coroutines with `yield from`" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Because CPython's GIL allows only one native thread to execute Python bytecode at a time, CPU-bound tasks require multiple independent OS processes (`multiprocessing` or `ProcessPoolExecutor`), each running its own Python interpreter instance and memory space."
+  },
+  {
+    "id": 3,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "CORE",
+    "sectionName": "SDE Core Fundamentals",
+    "type": "MSQ",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "TypeScript Type System",
+    "questionText": "Which of the following TypeScript type features and declarations evaluate to `never`?",
+    "options": [
+      { "id": "A", "text": "The intersection of primitive incompatible types: `string & number`" },
+      { "id": "B", "text": "A function that has an unreachable end-point: `function fail(): never { throw new Error(); }`" },
+      { "id": "C", "text": "The union of any type with `unknown`: `string | unknown`" },
+      { "id": "D", "text": "`Exclude<'a' | 'b' | 'c', 'a' | 'b' | 'c'>`" }
+    ],
+    "correctAnswer": ["A", "B", "D"],
+    "explanation": "`string & number` is an impossible type which reduces to `never`. Functions that never return return `never`. Filtering all items using `Exclude` results in empty union `never`. `string | unknown` simplifies to `unknown`, not `never`."
+  },
+  {
+    "id": 4,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "CORE",
+    "sectionName": "SDE Core Fundamentals",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Algorithm Complexity Analysis",
+    "questionText": "Consider an algorithm that partitions an array of size N into 4 equal subproblems, recursively solves each subproblem, and combines the results in O(N) linear time: T(N) = 4 T(N/4) + O(N). According to the Master Theorem, what is the asymptotic runtime exponent k in O(N^k log N) (or O(N^k))? (Enter numeric integer/decimal value).",
+    "correctAnswer": { "min": 1, "max": 1 },
+    "explanation": "Using Master Theorem: a = 4, b = 4, f(n) = O(n^1). log_b(a) = log_4(4) = 1. Since f(n) = Theta(n^(log_b(a))), Case 2 applies: T(N) = O(N log N). The exponent of N is 1."
+  },
+  {
+    "id": 5,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "ARCH",
+    "sectionName": "Full Stack Systems & DBs",
+    "type": "MCQ",
+    "marks": 2,
+    "negativeMarks": 0.66,
+    "topic": "React 19 & Next.js App Router",
+    "questionText": "In React Server Components (RSC) architecture as used in Next.js App Router, which of the following operations CANNOT be performed directly within a Server Component?",
+    "options": [
+      { "id": "A", "text": "Accessing backend databases or file system securely via Node.js APIs" },
+      { "id": "B", "text": "Fetching sensitive internal microservice endpoints using secret API keys" },
+      { "id": "C", "text": "Using interactive React lifecycle hooks such as `useState`, `useEffect`, or `onClick` event listeners" },
+      { "id": "D", "text": "Passing serializable props down to child Client Components (`'use client'`)" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Server Components run exclusively on the server and do not participate in client-side hydration. Therefore, browser-only state hooks (`useState`, `useEffect`, `useReducer`) and DOM event listeners (`onClick`, `onChange`) can only be used in Client Components (`'use client'`)."
+  },
+  {
+    "id": 6,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "ARCH",
+    "sectionName": "Full Stack Systems & DBs",
+    "type": "MSQ",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "PostgreSQL & Database Indexing",
+    "questionText": "Given a table `orders(id UUID, user_id INT, status VARCHAR, created_at TIMESTAMP)` with 50,000,000 rows. Which of the following indexing strategies will effectively optimize the query: `SELECT * FROM orders WHERE user_id = $1 AND status = 'PENDING' ORDER BY created_at DESC LIMIT 10;`?",
+    "options": [
+      { "id": "A", "text": "A composite B-Tree index on `(user_id, status, created_at DESC)`" },
+      { "id": "B", "text": "A partial B-Tree index on `(user_id, created_at DESC) WHERE status = 'PENDING'`" },
+      { "id": "C", "text": "A standalone Hash index on `(status)`" },
+      { "id": "D", "text": "A single column B-Tree index on `(created_at DESC)`" }
+    ],
+    "correctAnswer": ["A", "B"],
+    "explanation": "A composite index `(user_id, status, created_at DESC)` allows the query planner to satisfy both equality filters and the sort order without an in-memory filesort. A partial index `WHERE status = 'PENDING'` is even more compact and fast if pending orders are a small fraction of the table."
+  },
+  {
+    "id": 7,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "ARCH",
+    "sectionName": "Full Stack Systems & DBs",
+    "type": "MCQ",
+    "marks": 2,
+    "negativeMarks": 0.66,
+    "topic": "Distributed Caching & Redis",
+    "questionText": "When designing a high-throughput API with Redis caching, what is the primary cause of a 'Cache Stampede' (Thundering Herd) and what is the standard architectural mitigation?",
+    "options": [
+      { "id": "A", "text": "Cache key hash collisions; mitigated by using SHA-256 keys" },
+      { "id": "B", "text": "Simultaneous cache expiration of a popular hot key under high concurrent load; mitigated by distributed mutex locking or probabilistic early recomputation (XFetch)" },
+      { "id": "C", "text": "Redis memory overflow causing OOM kill; mitigated by increasing maxmemory" },
+      { "id": "D", "text": "Slow serialization format; mitigated by replacing JSON with XML" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A cache stampede occurs when a high-traffic key expires, causing thousands of concurrent requests to experience a cache miss simultaneously and inundate the backend database. Mitigations include distributed mutex locks (single flight) or probabilistic early refreshing (XFetch algorithm)."
+  },
+  {
+    "id": 8,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "ARCH",
+    "sectionName": "Full Stack Systems & DBs",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "System Design & Capacity Planning",
+    "questionText": "An e-commerce flash sale service handles 6,000 write requests per second (RPS). Each request payload is 2 KB. What is the minimum network bandwidth required for write ingestion in Megabits per second (Mbps)? (1 Byte = 8 bits, 1 KB = 1000 Bytes, 1 MB = 1000 KB. Round to nearest integer).",
+    "correctAnswer": { "min": 96, "max": 96 },
+    "explanation": "Total throughput = 6,000 requests/sec * 2 KB/request = 12,000 KB/sec = 12 MB/sec. Bandwidth in Mbps = 12 MB/sec * 8 bits/Byte = 96 Mbps."
+  },
+  {
+    "id": 9,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "ARCH",
+    "sectionName": "Full Stack Systems & DBs",
+    "type": "MCQ",
+    "marks": 2,
+    "negativeMarks": 0.66,
+    "topic": "Microservices & Distributed Transactions",
+    "questionText": "In a distributed microservice payment and order fulfillment architecture, which pattern is recommended over traditional two-phase commit (2PC) to maintain eventual consistency without long-held database locks across network boundaries?",
+    "options": [
+      { "id": "A", "text": "Monolithic Shared Database Pattern" },
+      { "id": "B", "text": "Saga Pattern with Orchestration or Choreography and Compensating Transactions" },
+      { "id": "C", "text": "Strict Write-Ahead Logging on Client Devices" },
+      { "id": "D", "text": "Synchronous RPC Chains with Timeout Cascading" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "The Saga pattern coordinates distributed transactions across multiple independent microservice databases via a sequence of local transactions and compensating transactions (rollbacks) upon failure, avoiding blocking 2PC locks."
+  },
+  {
+    "id": 10,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "ARCH",
+    "sectionName": "Full Stack Systems & DBs",
+    "type": "MSQ",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Web Security (OWASP Top 10)",
+    "questionText": "Which of the following HTTP response headers and techniques directly mitigate Cross-Site Scripting (XSS) and Cross-Site Request Forgery (CSRF) vulnerabilities in modern web applications?",
+    "options": [
+      { "id": "A", "text": "`Content-Security-Policy (CSP)` restricting script execution origins" },
+      { "id": "B", "text": "Setting `SameSite=Lax` or `SameSite=Strict` on session authentication cookies" },
+      { "id": "C", "text": "Storing JWT authentication tokens in unencrypted `localStorage`" },
+      { "id": "D", "text": "Context-aware HTML output escaping and anti-CSRF synchronizer tokens" }
+    ],
+    "correctAnswer": ["A", "B", "D"],
+    "explanation": "CSP blocks unauthorized inline/external script injection (XSS). SameSite cookie attribute prevents browsers from sending cookies on cross-origin requests (CSRF). Output encoding neutralizes payload injection. Storing JWT in localStorage is vulnerable to XSS token theft."
+  },
+  {
+    "id": 11,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "ARCH",
+    "sectionName": "Full Stack Systems & DBs",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "HTTP Protocol & REST Status Codes",
+    "questionText": "In REST API design, what is the standard HTTP status code that should be returned when a client attempts to create a resource with an idempotency key or identifier that already exists in the system (Conflict)? (Enter 3-digit numeric code).",
+    "correctAnswer": { "min": 409, "max": 409 },
+    "explanation": "HTTP 409 Conflict indicates that the request could not be processed because of a conflict in the current state of the target resource (such as an edit conflict or duplicate unique constraint)."
+  },
+  {
+    "id": 12,
+    "testId": "swe-fullstack-mock-01",
+    "sectionId": "ARCH",
+    "sectionName": "Full Stack Systems & DBs",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "Docker & Container Optimization",
+    "questionText": "Which Dockerfile instruction strategy is essential for minimizing production container image sizes and securing sensitive build-time environment credentials?",
+    "options": [
+      { "id": "A", "text": "Running `apt-get install` in separate `RUN` layers without cleaning cache" },
+      { "id": "B", "text": "Multi-stage builds (`FROM ... AS builder` and `COPY --from=builder ...` into a minimal Alpine/Distroless image)" },
+      { "id": "C", "text": "Including `.git` directory and `node_modules` inside the build context" },
+      { "id": "D", "text": "Running the container process as root by default" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Multi-stage Docker builds allow compiling assets and dependencies in an intermediate builder stage and copying only the compiled artifacts into a lightweight runtime image (e.g. Alpine/Distroless), eliminating compilers, package caches, and build credentials."
+  }
+]

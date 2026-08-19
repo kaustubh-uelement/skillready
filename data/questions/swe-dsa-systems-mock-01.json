@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "testId": "swe-dsa-systems-mock-01",
+    "sectionId": "DSA",
+    "sectionName": "Data Structures & Algorithms",
+    "type": "MCQ",
+    "marks": 2,
+    "negativeMarks": 0.66,
+    "topic": "Graph Algorithms",
+    "questionText": "What is the time complexity of Dijkstra's algorithm for finding single-source shortest paths on a directed graph with V vertices and E edges when implemented using a Min-Indexed Binary Heap?",
+    "options": [
+      { "id": "A", "text": "O(V²)" },
+      { "id": "B", "text": "O((V + E) log V)" },
+      { "id": "C", "text": "O(V * E)" },
+      { "id": "D", "text": "O(V³)" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Extract-min takes O(log V) per vertex (total O(V log V)) and decrease-key takes O(log V) per edge relaxation (total O(E log V)). Total runtime is O((V + E) log V)."
+  },
+  {
+    "id": 2,
+    "testId": "swe-dsa-systems-mock-01",
+    "sectionId": "DSA",
+    "sectionName": "Data Structures & Algorithms",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Dynamic Programming",
+    "questionText": "How many unique Binary Search Trees (BSTs) can be constructed with 4 distinct keys? (Catalan number C₄).",
+    "correctAnswer": { "min": 14, "max": 14 },
+    "explanation": "Number of unique BSTs for n keys is given by Catalan number C_n = (2n)! / ((n + 1)! * n!). For n = 4: C_4 = 8! / (5! * 4!) = 40320 / (120 * 24) = 14."
+  },
+  {
+    "id": 3,
+    "testId": "swe-dsa-systems-mock-01",
+    "sectionId": "SYS",
+    "sectionName": "Distributed Backend Systems",
+    "type": "MSQ",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Distributed Consensus & CAP Theorem",
+    "questionText": "Which of the following distributed storage systems favor Consistency and Partition Tolerance (CP) over Availability in the event of a network split under the CAP Theorem?",
+    "options": [
+      { "id": "A", "text": "Apache ZooKeeper" },
+      { "id": "B", "text": "etcd (Raft Consensus)" },
+      { "id": "C", "text": "Apache Cassandra (Default AP mode with tunable consistency)" },
+      { "id": "D", "text": "AWS DynamoDB (Eventual consistency mode)" }
+    ],
+    "correctAnswer": ["A", "B"],
+    "explanation": "ZooKeeper (ZAB) and etcd (Raft) reject writes on minority partitions to strictly enforce linearizable consensus and consistency (CP systems). Cassandra and DynamoDB default to high availability (AP systems)."
+  },
+  {
+    "id": 4,
+    "testId": "swe-dsa-systems-mock-01",
+    "sectionId": "SYS",
+    "sectionName": "Distributed Backend Systems",
+    "type": "MCQ",
+    "marks": 2,
+    "negativeMarks": 0.66,
+    "topic": "Message Queues & Kafka",
+    "questionText": "In Apache Kafka, what guarantees strict ordering of message consumption across multiple consumer instances in a consumer group?",
+    "options": [
+      { "id": "A", "text": "All messages in a topic are guaranteed globally ordered across partitions" },
+      { "id": "B", "text": "Messages with the same Partition Key are routed to the same partition and read sequentially by a single assigned consumer instance" },
+      { "id": "C", "text": "Kafka brokers automatically re-sort messages alphabetically by payload" },
+      { "id": "D", "text": "Enabling zero-copy disk writes with sendfile" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Kafka provides strict message ordering within a single partition. By assigning identical partition keys (e.g. `userId`), messages are consistently written to the same partition and consumed in chronological log order."
+  },
+  {
+    "id": 5,
+    "testId": "swe-dsa-systems-mock-01",
+    "sectionId": "SYS",
+    "sectionName": "Distributed Backend Systems",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Database Sharding & Consistent Hashing",
+    "questionText": "A distributed key-value store uses a Consistent Hashing ring with 2^32 hash slots and 8 virtual nodes per physical node. If there are 16 physical storage nodes in the cluster, what is the total number of virtual nodes mapped onto the ring?",
+    "correctAnswer": { "min": 128, "max": 128 },
+    "explanation": "Total virtual nodes = Physical Nodes * Virtual Nodes per Node = 16 * 8 = 128 virtual nodes."
+  }
+]

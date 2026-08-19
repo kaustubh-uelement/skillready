@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "testId": "swe-devops-cloud-mock-01",
+    "sectionId": "CONTAINERS",
+    "sectionName": "Containers & K8s",
+    "type": "MCQ",
+    "marks": 2,
+    "negativeMarks": 0.66,
+    "topic": "Kubernetes Architecture",
+    "questionText": "In Kubernetes, which component is responsible for maintaining network rules on nodes and allowing network communication to your Pods from network sessions inside or outside of your cluster?",
+    "options": [
+      { "id": "A", "text": "kube-proxy (utilizing iptables / IPVS)" },
+      { "id": "B", "text": "kube-scheduler" },
+      { "id": "C", "text": "cloud-controller-manager" },
+      { "id": "D", "text": "kube-controller-manager" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept by managing iptables or IPVS packet filtering rules."
+  },
+  {
+    "id": 2,
+    "testId": "swe-devops-cloud-mock-01",
+    "sectionId": "CONTAINERS",
+    "sectionName": "Containers & K8s",
+    "type": "MSQ",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Kubernetes Health Checks",
+    "questionText": "Which of the following statements regarding Kubernetes Probes are TRUE?",
+    "options": [
+      { "id": "A", "text": "A failed Liveness Probe causes kubelet to kill and restart the container." },
+      { "id": "B", "text": "A failed Readiness Probe removes the Pod's IP address from matching Service endpoints so no traffic is routed to it." },
+      { "id": "C", "text": "Startup Probes run continuously for the entire lifecycle of the container." },
+      { "id": "D", "text": "Readiness Probes can be configured via HTTP GET, TCP Socket, or exec command." }
+    ],
+    "correctAnswer": ["A", "B", "D"],
+    "explanation": "Liveness probes restart failed containers. Readiness probes disable traffic routing to unready pods. Startup probes only run during initial initialization until completion. Probes support HTTP, TCP, exec, and gRPC checks."
+  },
+  {
+    "id": 3,
+    "testId": "swe-devops-cloud-mock-01",
+    "sectionId": "INFRA",
+    "sectionName": "CI/CD & Cloud Infrastructure",
+    "type": "MCQ",
+    "marks": 2,
+    "negativeMarks": 0.66,
+    "topic": "Infrastructure as Code (Terraform)",
+    "questionText": "In Terraform, what command should be executed to inspect the execution plan and verify what infrastructure modifications will occur BEFORE applying changes to production?",
+    "options": [
+      { "id": "A", "text": "`terraform plan`" },
+      { "id": "B", "text": "`terraform init -force`" },
+      { "id": "C", "text": "`terraform destroy -auto-approve`" },
+      { "id": "D", "text": "`terraform fmt`" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "`terraform plan` creates an execution plan, reading current state and determining what actions are necessary to reach the desired state defined in configuration files."
+  },
+  {
+    "id": 4,
+    "testId": "swe-devops-cloud-mock-01",
+    "sectionId": "INFRA",
+    "sectionName": "CI/CD & Cloud Infrastructure",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Cloud Networking (CIDR)",
+    "questionText": "How many total usable host IP addresses are available in an AWS Virtual Private Cloud (VPC) subnet with a CIDR block of /28? (Note: AWS reserves 5 IP addresses per subnet).",
+    "correctAnswer": { "min": 11, "max": 11 },
+    "explanation": "A /28 subnet has 2^(32 - 28) = 2^4 = 16 total IP addresses. Since AWS reserves 5 addresses (network, router, DNS, future use, broadcast), the usable host IP count is 16 - 5 = 11."
+  }
+]
