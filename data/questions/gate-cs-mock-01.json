@@ -1,0 +1,206 @@
+[
+  {
+    "id": 1,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "GA",
+    "sectionName": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "Verbal Ability",
+    "questionText": "The Canadian constitution requires that equal importance be given to both English and French. A domestic airline had to pay a six-figure fine to a French-speaking couple after they filed a complaint that the flight attendant gave safety instructions in English first, followed by a brief announcement in French.\n\nWhich of the following inferences can be made from the given passage?",
+    "options": [
+      { "id": "A", "text": "The in-flight announcements being made in English violated the statutory regulation." },
+      { "id": "B", "text": "The English announcements being clearer than the French ones was the primary grievance." },
+      { "id": "C", "text": "The English announcements being longer or prioritized violated equal importance under the statute." },
+      { "id": "D", "text": "Equal importance was strictly given to both English and French by the airlines." }
+    ],
+    "correctAnswer": "C",
+    "explanation": "The passage highlights that prioritizing English or providing only a brief announcement in French breached the statutory requirement of equal importance, leading to the fine."
+  },
+  {
+    "id": 2,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "GA",
+    "sectionName": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "Quantitative Aptitude",
+    "questionText": "If x : y = 3 : 4 and y : z = 5 : 6, what is the value of (x + y + z) / (3x + 2y - z)?",
+    "options": [
+      { "id": "A", "text": "59 / 61" },
+      { "id": "B", "text": "59 / 41" },
+      { "id": "C", "text": "47 / 35" },
+      { "id": "D", "text": "61 / 59" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Scaling ratios: x:y:z = 15:20:24. Sum = 15+20+24 = 59. Denominator = 3(15) + 2(20) - 24 = 45 + 40 - 24 = 61. Thus the ratio is 59/61."
+  },
+  {
+    "id": 3,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "GA",
+    "sectionName": "General Aptitude",
+    "type": "MSQ",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Logical Reasoning",
+    "questionText": "Consider the following statements regarding sets P, Q, and R:\n1. All elements of P are in Q.\n2. Some elements of Q are in R.\n3. No element of R is in P.\n\nWhich of the following conclusions are necessarily TRUE?",
+    "options": [
+      { "id": "A", "text": "Some elements in Q are not in P." },
+      { "id": "B", "text": "The intersection of P and R is the empty set (P ∩ R = ∅)." },
+      { "id": "C", "text": "Some elements in Q are not in R." },
+      { "id": "D", "text": "Every element of P is not an element of R." }
+    ],
+    "correctAnswer": ["B", "D"],
+    "explanation": "Since no element of R is in P (statement 3), P ∩ R = ∅ (Option B is true) and any element in P cannot be in R (Option D is true)."
+  },
+  {
+    "id": 4,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "GA",
+    "sectionName": "General Aptitude",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Combinatorics",
+    "questionText": "A committee of 4 members is to be formed from 5 men and 4 women such that the committee contains at least 2 women. The total number of different ways to form this committee is __________.",
+    "correctAnswer": { "min": 81, "max": 81 },
+    "explanation": "Cases: (2 women, 2 men) = 4C2 * 5C2 = 6 * 10 = 60. (3 women, 1 man) = 4C3 * 5C1 = 4 * 5 = 20. (4 women, 0 men) = 4C4 * 5C0 = 1 * 1 = 1. Total = 60 + 20 + 1 = 81."
+  },
+  {
+    "id": 5,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "Theory of Computation",
+    "questionText": "Let S and T be languages represented by the regular expressions (a + b*)* and (a + b)*, respectively. Which of the following relationships is TRUE?",
+    "options": [
+      { "id": "A", "text": "S ⊂ T (S is a proper subset of T)" },
+      { "id": "B", "text": "T ⊂ S (T is a proper subset of S)" },
+      { "id": "C", "text": "S = T (Both languages are identical to {a, b}*)" },
+      { "id": "D", "text": "S ∩ T = ∅" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "(a + b*)* generates all possible strings over {a, b} containing any combinations of a and b including the empty string ε. (a + b)* also generates {a, b}*. Hence S = T."
+  },
+  {
+    "id": 6,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "MCQ",
+    "marks": 2,
+    "negativeMarks": 0.66,
+    "topic": "Algorithms",
+    "questionText": "Consider an array of n distinct elements. What is the worst-case number of comparisons required to find both the minimum and the maximum elements simultaneously using an optimal divide-and-conquer approach?",
+    "options": [
+      { "id": "A", "text": "2n - 2" },
+      { "id": "B", "text": "⌈3n/2⌉ - 2" },
+      { "id": "C", "text": "n log₂ n" },
+      { "id": "D", "text": "3n/2" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Comparing elements in pairs takes 3n/2 - 2 comparisons, which is strictly optimal compared to standard linear scans requiring 2n - 2 comparisons."
+  },
+  {
+    "id": 7,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "MSQ",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Operating Systems",
+    "questionText": "Which of the following statements regarding Virtual Memory and Page Replacement Algorithms are TRUE?",
+    "options": [
+      { "id": "A", "text": "Belady's Anomaly can occur in First-In-First-Out (FIFO) page replacement." },
+      { "id": "B", "text": "Least Recently Used (LRU) belongs to the class of Stack Algorithms and is immune to Belady's Anomaly." },
+      { "id": "C", "text": "Optimal Page Replacement (OPT) algorithm can be easily implemented in general-purpose operating systems." },
+      { "id": "D", "text": "Thrashing occurs when the sum of working set sizes of all processes exceeds total physical memory available." }
+    ],
+    "correctAnswer": ["A", "B", "D"],
+    "explanation": "Belady's anomaly occurs in FIFO but not in stack algorithms like LRU/OPT. OPT requires future knowledge so it is unimplementable. Thrashing occurs when total working set > physical RAM."
+  },
+  {
+    "id": 8,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Computer Networks",
+    "questionText": "Consider a selective repeat sliding window protocol operating over a 1 Gbps link with a round-trip time (RTT) of 40 ms. The packet size is 1000 bytes (8000 bits). If the sequence numbers are represented using k bits, what is the minimum value of k required to achieve 100% link utilization? (Assume no transmission errors; Round up to the nearest integer).",
+    "correctAnswer": { "min": 14, "max": 14 },
+    "explanation": "Transmission time Tt = 8000 bits / 10^9 bps = 8 microseconds = 0.008 ms. Window size W >= 1 + 2a = 1 + (40 / 0.008) = 5001 packets. For Selective Repeat, max sender window = 2^(k-1). 2^(k-1) >= 5001 => k-1 = 13 => k = 14 bits."
+  },
+  {
+    "id": 9,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "MCQ",
+    "marks": 2,
+    "negativeMarks": 0.66,
+    "topic": "Databases (DBMS)",
+    "questionText": "Given a relation schema R(A, B, C, D, E) with functional dependencies:\nF = { A → B, BC → E, ED → A }\n\nWhat is the canonical cover (minimal cover) and which of the following is a candidate key for R?",
+    "options": [
+      { "id": "A", "text": "ACD is the only candidate key" },
+      { "id": "B", "text": "BCD and ACD are candidate keys" },
+      { "id": "C", "text": "BCD, ACD, and CDE are candidate keys" },
+      { "id": "D", "text": "AB is a candidate key" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "Closure of (ACD)+ = {A,B,C,D,E}. Since A can be derived from ED, (CDE)+ = {A,B,C,D,E}. Since E can be derived from BC, (BCD)+ = {A,B,C,D,E}. Thus BCD, ACD, and CDE are all candidate keys."
+  },
+  {
+    "id": 10,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "NAT",
+    "marks": 1,
+    "negativeMarks": 0,
+    "topic": "Discrete Mathematics",
+    "questionText": "Let G be a simple connected planar graph with 20 vertices and each vertex having degree 3. How many faces (regions) does G divide the plane into?",
+    "correctAnswer": { "min": 12, "max": 12 },
+    "explanation": "Sum of degrees = 2E => 20 * 3 = 2E => E = 30 edges. Using Euler's planar formula V - E + F = 2 => 20 - 30 + F = 2 => F = 12 faces."
+  },
+  {
+    "id": 11,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "Compiler Design",
+    "questionText": "Which of the following grammar classes is the most powerful in terms of language recognition capability without ambiguity?",
+    "options": [
+      { "id": "A", "text": "LL(1)" },
+      { "id": "B", "text": "SLR(1)" },
+      { "id": "C", "text": "LALR(1)" },
+      { "id": "D", "text": "CLR(1) / Canonical LR(1)" }
+    ],
+    "correctAnswer": "D",
+    "explanation": "The hierarchy of deterministic parsers is LL(1) ⊂ SLR(1) ⊂ LALR(1) ⊂ CLR(1). CLR(1) is the most expressive parser."
+  },
+  {
+    "id": 12,
+    "testId": "gate-cs-mock-01",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Computer Organization & Architecture",
+    "questionText": "A 4-stage pipelined processor has stage delays of 150 ps, 120 ps, 180 ps, and 160 ps respectively. The pipeline register delay is 20 ps. What is the clock cycle time of the pipelined processor in picoseconds (ps)?",
+    "correctAnswer": { "min": 200, "max": 200 },
+    "explanation": "Clock cycle time = Max(Stage Delays) + Register Delay = Max(150, 120, 180, 160) + 20 = 180 + 20 = 200 ps."
+  }
+]

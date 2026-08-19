@@ -56,6 +56,16 @@ export default function DashboardLayout({
       ),
     },
     {
+      label: "Test Series",
+      href: "/dashboard/tests",
+      icon: (
+        <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.4">
+          <path d="M3 2h10a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V3a1 1 0 011-1z" />
+          <path d="M5 6h6M5 9h4M5 12h2" />
+        </svg>
+      ),
+    },
+    {
       label: "Certifications",
       href: "/dashboard/certifications",
       icon: (

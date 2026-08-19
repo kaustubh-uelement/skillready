@@ -11,13 +11,13 @@ export default function ConditionalChrome({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isDashboard = pathname.startsWith("/dashboard");
+  const hideChrome = pathname.startsWith("/dashboard") || pathname.startsWith("/exam");
 
   return (
     <>
-      {!isDashboard && <Navbar />}
+      {!hideChrome && <Navbar />}
       {children}
-      {!isDashboard && <Footer />}
+      {!hideChrome && <Footer />}
     </>
   );
 }

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "gate-cs-mock-01",
+    "title": "GATE 2027 Full Length All-India Mock 01",
+    "code": "CS-MOCK-01",
+    "branch": "Computer Science & Information Technology",
+    "durationMinutes": 180,
+    "totalMarks": 100,
+    "numQuestions": 65,
+    "status": "attempted",
+    "lastAttemptScore": 71.33,
+    "lastAttemptDate": "18 Aug 2026",
+    "sections": [
+      {
+        "id": "GA",
+        "name": "General Aptitude",
+        "totalQuestions": 10,
+        "totalMarks": 15
+      },
+      {
+        "id": "CS",
+        "name": "Computer Science & IT",
+        "totalQuestions": 55,
+        "totalMarks": 85
+      }
+    ],
+    "syllabus": [
+      "Engineering Mathematics & Discrete Math",
+      "Digital Logic, COA & Microprocessors",
+      "Data Structures, Algorithms & Asymptotics",
+      "Theory of Computation & Compiler Design",
+      "Operating Systems & Multithreading",
+      "DBMS, SQL & Normalization",
+      "Computer Networks & Protocols"
+    ]
+  },
+  {
+    "id": "gate-cs-mock-02",
+    "title": "GATE 2027 Full Length All-India Mock 02",
+    "code": "CS-MOCK-02",
+    "branch": "Computer Science & Information Technology",
+    "durationMinutes": 180,
+    "totalMarks": 100,
+    "numQuestions": 65,
+    "status": "not_attempted",
+    "sections": [
+      {
+        "id": "GA",
+        "name": "General Aptitude",
+        "totalQuestions": 10,
+        "totalMarks": 15
+      },
+      {
+        "id": "CS",
+        "name": "Computer Science & IT",
+        "totalQuestions": 55,
+        "totalMarks": 85
+      }
+    ],
+    "syllabus": [
+      "Algorithms (Dynamic Programming, Graphs, NP-Completeness)",
+      "Theory of Computation (Turing Machines, Undecidability)",
+      "Computer Systems & Memory Hierarchy",
+      "Advanced Database Concurrency & Recovery",
+      "Network Routing & Cryptography",
+      "Verbal & Numerical Ability"
+    ]
+  },
+  {
+    "id": "gate-da-mock-01",
+    "title": "GATE 2027 Data Science & AI All-India Mock 01",
+    "code": "DA-MOCK-01",
+    "branch": "Data Science & Artificial Intelligence",
+    "durationMinutes": 180,
+    "totalMarks": 100,
+    "numQuestions": 65,
+    "status": "not_attempted",
+    "sections": [
+      {
+        "id": "GA",
+        "name": "General Aptitude",
+        "totalQuestions": 10,
+        "totalMarks": 15
+      },
+      {
+        "id": "DA",
+        "name": "Data Science & AI",
+        "totalQuestions": 55,
+        "totalMarks": 85
+      }
+    ],
+    "syllabus": [
+      "Probability, Statistics & Linear Algebra",
+      "Calculus & Optimization Techniques",
+      "Programming, Data Structures & Python Internals",
+      "Database Management & Warehousing",
+      "Machine Learning (Supervised, Unsupervised, Ensemble)",
+      "Deep Learning & Artificial Intelligence"
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+[
+  {
+    "id": 1,
+    "testId": "gate-cs-mock-02",
+    "sectionId": "GA",
+    "sectionName": "General Aptitude",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "Verbal Ability",
+    "questionText": "Choose the word that is most nearly opposite in meaning to the word **METICULOUS**:",
+    "options": [
+      { "id": "A", "text": "Careless" },
+      { "id": "B", "text": "Punctual" },
+      { "id": "C", "text": "Painstaking" },
+      { "id": "D", "text": "Fastidious" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Meticulous means showing great attention to detail; very careful and precise. The opposite is careless."
+  },
+  {
+    "id": 2,
+    "testId": "gate-cs-mock-02",
+    "sectionId": "GA",
+    "sectionName": "General Aptitude",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Quantitative Aptitude",
+    "questionText": "Two pipes A and B can fill a tank in 12 hours and 18 hours respectively. If both pipes are opened simultaneously, in how many hours will the tank be completely filled? (Round to 1 decimal place).",
+    "correctAnswer": { "min": 7.2, "max": 7.2 },
+    "explanation": "Combined rate = 1/12 + 1/18 = (3 + 2)/36 = 5/36 per hour. Time = 36/5 = 7.2 hours."
+  },
+  {
+    "id": 3,
+    "testId": "gate-cs-mock-02",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "MCQ",
+    "marks": 1,
+    "negativeMarks": 0.33,
+    "topic": "Data Structures",
+    "questionText": "Which of the following data structures is most suitable for implementing an efficient Priority Queue with O(log n) insertions and deletions?",
+    "options": [
+      { "id": "A", "text": "Binary Search Tree" },
+      { "id": "B", "text": "Binary Heap (Min-Heap / Max-Heap)" },
+      { "id": "C", "text": "Circular Queue" },
+      { "id": "D", "text": "Doubly Linked List" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A binary heap provides guaranteed O(log n) insert and extract-min/max operations with contiguous array cache locality."
+  },
+  {
+    "id": 4,
+    "testId": "gate-cs-mock-02",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "MSQ",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Algorithms",
+    "questionText": "Which of the following problems are known to be in the class **NP-Complete**?",
+    "options": [
+      { "id": "A", "text": "Boolean Satisfiability (3-SAT)" },
+      { "id": "B", "text": "Shortest Path in Directed Acyclic Graph" },
+      { "id": "C", "text": "Traveling Salesperson Problem (Decision version)" },
+      { "id": "D", "text": "Vertex Cover Problem" }
+    ],
+    "correctAnswer": ["A", "C", "D"],
+    "explanation": "3-SAT, TSP (decision version), and Vertex Cover are Karp's 21 NP-Complete problems. Shortest path in DAG is in P (O(V+E))."
+  },
+  {
+    "id": 5,
+    "testId": "gate-cs-mock-02",
+    "sectionId": "CS",
+    "sectionName": "Computer Science & IT",
+    "type": "NAT",
+    "marks": 2,
+    "negativeMarks": 0,
+    "topic": "Operating Systems",
+    "questionText": "A system has 4 processes and 3 identical resource units. What is the maximum number of units each process can demand simultaneously without causing a deadlock?",
+    "correctAnswer": { "min": 1, "max": 1 },
+    "explanation": "Condition for deadlock avoidance: Total resources R >= N * (Max - 1) + 1. Here 3 >= 4 * (m - 1) + 1 => 2 >= 4(m - 1) => m - 1 <= 0.5 => max integer demand is 1."
+  }
+]
